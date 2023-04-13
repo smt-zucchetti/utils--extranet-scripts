@@ -1,0 +1,10 @@
+#theform_preventivo .table .fade:nth-of-type(3),
+#theform_preventivo .table .fade:nth-of-type(3) > input
+{
+    display: none;
+}
+
+.unlocker .table label
+{
+    width: 25%;
+}

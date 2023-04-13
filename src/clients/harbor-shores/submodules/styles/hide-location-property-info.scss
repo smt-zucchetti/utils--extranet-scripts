@@ -1,0 +1,19 @@
+#scheda_hotel ul.scheda_tabs 
+{
+    width: 100%;
+    
+    li 
+    {
+        width: 25%;
+        
+        a 
+        {
+            width: 100% !important;
+        }
+        
+        &:nth-of-type(2)
+        {
+            display: none;   
+        }
+    }
+}

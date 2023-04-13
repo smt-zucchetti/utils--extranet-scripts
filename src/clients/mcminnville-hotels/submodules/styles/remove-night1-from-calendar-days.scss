@@ -1,0 +1,18 @@
+#calendar
+{
+    .day_text .day_nights
+    {
+        display: none;    
+    }
+    
+    .day_text {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .prices
+    {
+        margin-top: 5px;
+    }
+}
+

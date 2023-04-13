@@ -1,0 +1,115 @@
+
+html.is-ada
+{
+    .day_box
+    {
+        &.past_date, &.past_date.weekend,
+        &.available, &.available.weekend, 
+        &.disp_min_stay, &.disp_min_stay.weekend,
+        &.no-disp, &.no-disp.weekend
+        {
+            transition: background-color .2s ease-in;
+        }
+    }
+    .leg_available, .leg_unavailable, .leg_min_stay
+    {
+        transition: background-color .2s ease-in;
+    }
+    .seleziona_giorni ul li
+    {
+        .available, .seleziona, .no_available
+        {
+            transition: background-color .2s ease-in;
+        }
+    }
+}
+
+html.is-ada
+{
+    .day_box
+    {
+        &.past_date 
+        {
+            background: $pastDaysWD;
+        }
+        &.past_date.weekend
+        {
+            background: $pastDaysWE;
+        }
+        
+        &.available
+        {
+            background: $availDaysWD;
+        }
+        &.available.weekend 
+        {
+            background: $availDaysWE;
+        }
+        
+        &.no-disp
+        {
+            background: $unavailDaysWD;
+        }
+        &.no-disp.weekend
+        {
+            background: $unavailDaysWE;
+        }
+        
+        
+        &.disp_min_stay
+        {
+            background: $minStayWD;
+        }
+        &.disp_min_stay.weekend 
+        {
+            background: $minStayWE;
+        }   
+    }
+    
+    #legenda_calendario
+    {
+        .leg_available
+        {
+            background: $availDaysWD;
+            border: 1px solid '#333';
+        }    
+        
+        .leg_min_stay
+        {
+            background: $minStayWD;
+        }
+        
+        .leg_unavailable
+        {
+            background: $unavailDaysWD;
+            background-size: contain !important;
+            border: none;
+        }
+    }
+    
+    
+    .seleziona_giorni ul li
+    {
+        background: $availDaysWD;
+        
+        & .available,
+        & .available ~ .vai > .seleziona
+        {
+            background: $availDaysWD;
+            border: 1px solid #333;
+            color: #333 !important;
+        }
+        & .available ~ .vai > .seleziona:hover
+        {
+            background: darken($availDaysWD, 40%);
+            color: #fff;
+        }
+        
+        .no_available
+        {
+            background: $unavailDaysWD;
+            background-size: contain !important;
+            border: none !important;
+        }
+    }
+}

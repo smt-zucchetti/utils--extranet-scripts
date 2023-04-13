@@ -1,0 +1,28 @@
+#legenda_calendario .voce_legenda:nth-of-type(3)
+{
+    color: transparent;
+    position: relative;
+    
+    &::after
+    {
+        color: initial;
+        content: "Available";
+        position: absolute;
+        left: 20px;
+    }
+}
+
+.day_box.available .day_nights
+{
+    color: transparent;
+    position: relative;
+    
+    &::after 
+    {
+        color: initial;
+        content: "1 Night";
+        position: absolute;
+        top: 1px;
+        left: 5px;
+    }
+}

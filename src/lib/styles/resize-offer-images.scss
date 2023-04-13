@@ -1,0 +1,19 @@
+
+
+#pag_pacchetti .element-item .box_offerta .foto_pacchetto img {
+    max-height: 189px;
+}
+
+@media screen and (min-width: 1140px){
+    #pag_pacchetti .element-item .box_offerta .foto_pacchetto img {
+        max-height: 228px;
+    }
+}
+
+
+@media screen and (max-width: 680px){
+    #pag_pacchetti .element-item .box_offerta .foto_pacchetto img {
+        max-height: 300px;
+    }
+}
+

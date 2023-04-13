@@ -1,0 +1,10 @@
+*:not(html){
+    transition: background-color .2s ease-in, color .2s ease-in;
+}
+
+@import '_colors';
+@import '_calendar';
+@import '_main-premium-styles';
+@import '_widget';
+@import '_override';
+@import '_form-labels';

@@ -1,0 +1,161 @@
+@import './calendar/calendar';
+
+#seleziona_giorni li:not(:last-of-type)
+{
+  display: none;
+}
+
+.seleziona_giorni ul li
+{
+    background: inherit;
+}
+
+/*#riepilogo_viaggio
+{
+    display: none;
+}*/
+
+.seleziona_giorni ul li .available ~ .vai > .seleziona,
+.seleziona_giorni ul li .available ~ .vai > .seleziona:hover
+{
+    background: inherit;
+}
+
+//Rooms in Travel Summary Box
+#carrello_appendi .viaggio .eti:nth-of-type(3) {
+   display: none;
+}
+
+//language line in header
+.select_lang .lang a.spento {
+    min-width: 165px;
+} 
+
+//sticky footer
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+
+//Homepage icon in header
+#hp a {
+    background: #003DA5;
+    padding: 0 10px;
+    color: #FFFFFF;
+}
+
+//auto show rate list drop down
+.container_tipo
+{
+    display: block !important;   
+}
+
+//hide "starting from price" text above drop down 
+.campo .accordion
+{
+    cursor: default;
+    display: none;
+}
+
+//conditions text
+.blocco_tipo .cond
+{
+    display: none;
+}
+
+//"Book" bottom
+.reserve .select_room.book
+{
+    color: transparent;
+    
+    &::after
+    {
+        color: #fff;
+        content: 'Next';
+        margin-left: -32px;
+    }
+}
+
+//final step header text
+#box_dx > .seleziona_camera > h2
+{
+    color: transparent;
+    position: relative;
+    font-size: 4px !important;
+    
+    &::after
+    {
+        content: 'YOUR BOOKING HAS BEEN REGISTERED';
+        color: #fff;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+//room results header text
+#box_dx > #seleziona_camera_title > h2
+{
+    color: transparent;
+    position: relative;
+    font-size: 4px !important;
+    
+    &::after
+    {
+        content: 'EMBRACE THE SPIRIT OF ST. BARTHS';
+        color: #fff;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+//"First name" to "Name" on confirmation page
+.tariffe li:last-of-type h2:last-of-type .nome_camera > span
+{
+    color: transparent;
+    position: relative;
+    font-size: 4px !important;
+    
+    &::after
+    {
+        content: 'Name:';
+        color: #333;
+        position: absolute;
+        left: 0;
+        font-size: 16px;
+    }
+}
+
+//Discount button hidden
+#quick_reserve, #box_carrello
+{
+    .box_contenuto:last-of-type {
+        display: none;
+    }
+}
+
+//Hides social media buttons on Guest Info Page
+#social {
+    display: none;
+}
+
+form#dati_personali {
+    margin-top: 20px;
+}
+
+//Hides Room 1, Room 2, etc on Select Dates pages
+.row_camera.occupazione .num_camera {
+    color: transparent;
+    cursor: pointer;
+}

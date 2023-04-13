@@ -1,0 +1,8 @@
+#riepilogo h2 + h2::after,
+#summary-box .summary_value.summary_value_hotel::after
+{
+    display: block;
+    color: #50493e;
+    content: '${msg}';
+    margin-top: -24px;
+}

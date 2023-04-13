@@ -1,0 +1,41 @@
+#discount-code-button
+{
+  color: #fff;
+}
+
+#step
+{
+    margin-bottom: 0;
+}
+
+.row_titolo .sin p.secret_deal
+{
+    background-color: #9f1c20;
+}
+
+#scheda_link a.spento:hover
+{
+    background-color: #fff;
+    color: #222;
+}
+
+#scheda_link a .dx
+{
+    background-color: #9f1c20;
+    color: #fff !important;
+}
+
+.message p a.open
+{
+     background-color: #9f1c20 !important;
+}
+
+.text_upsgrade
+{
+    color: #222;
+    
+    button
+    {
+        color: var(--primary);   
+    }
+}

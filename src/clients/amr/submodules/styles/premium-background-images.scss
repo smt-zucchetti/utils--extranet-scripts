@@ -1,0 +1,93 @@
+/* Main background image */
+html:not(.gateway-form)
+{
+    background: var(--bgImage); 
+}
+
+/* Discount code button on Step 1 */
+.riga .inserisci_sconto
+{
+    background: var(--discountButtonColor);
+    color: #fff;
+}
+
+/* removes "Social Sign In" section on Step 4 */
+.campi_dati:not(.reservation_data_form) #social
+{
+    display: none
+}
+#dati_personali 
+{
+    padding-top: 20px
+}
+
+/* removes "Special Offer" callouts */
+.rate-details-link > img, 
+.targetta_offer 
+{
+    display: none;
+}
+
+/* fixes glitch with step 2 section alignment on zoom out */
+#sx 
+{ 
+    margin-right: 11px 
+}
+#dx 
+{ 
+    float: right 
+}
+
+/* hides property logo below steps/at top of each page */
+#logo-nome-hotel
+{
+    display:none
+}
+
+
+
+
+
+/* adds note to discount code form */
+/* Note: li#coupon-generic is display: none for group BEs, so we might want to just remove this block */
+#coupon ul li#coupon-generic
+{
+    .cont_interno_1_2 span
+    {
+        min-width: 120px;
+    }
+    
+    .cont_interno_2_2
+    {
+        width: auto;
+        padding-top: 5px;
+       
+        
+        input
+        {
+            max-width: 200px;
+        }
+        
+        &::after 
+        {
+            content: 'Please enter your discount, group, or client/agency affiliation code here';
+            display: block;
+            line-height: normal;
+            clear: both;
+            max-width: 240px;        
+        }
+    }
+}
+
+/* Hide Apple Wallet Button on Confirmation Page */
+#pulsante_pkpass_download
+{
+    display: none
+}
+
+/* Hides the Homepage button and link from the top bar */
+#hp
+{ 
+    display: none 
+}
+

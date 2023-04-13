@@ -1,0 +1,58 @@
+html
+{
+  background: #fefefe !important;
+}
+
+.calendar_row .day_box
+{
+    .day_text
+    {
+        color: transparent; 
+    }
+    .day_number 
+    {
+        font-size: 20px !important;
+        margin: 2px 0 0 4px;
+    }
+}
+
+.group-page .calendar_row .day_box .day_number
+{
+    line-height: 16px;
+    width: auto;    
+}
+
+#dida
+{
+    color: transparent;
+}
+
+#scheda_link a.spento:hover
+{
+    cursor: pointer;
+}
+
+#scheda_link a .dx
+{
+    display: none;
+}
+
+.cal .clock-block
+{
+    background: none;
+    
+    .clock-val::after
+    {
+        display: none;
+    }
+}
+
+.calendar_row .day_box .day_text .from
+{
+    color: transparent !important;
+}
+
+#first_page_banner .singola_promo .box img
+{
+    display: none;
+}

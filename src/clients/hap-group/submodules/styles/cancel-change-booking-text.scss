@@ -1,0 +1,23 @@
+#quick_reserve .t-center:first-of-type a
+{
+    color: transparent;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    
+    &:hover::after
+    {
+        color: var(--primary);
+    }
+    
+    &::after
+    {
+        color: #434345;
+        content: 'Cancel/change existing booking';
+        width: 100%;
+        position: absolute;
+        left: 0;
+        text-decoration: underline;
+        transition: all 0.3s ease 0s;
+    }
+}

@@ -1,0 +1,22 @@
+.dont-forget
+{
+    &--container 
+    {
+        margin-top: 24px;
+        text-align: center;
+    }
+
+    &--link
+    {
+        color: #fff;
+        background-color: #D16D13;
+        font-size: 18px;
+        padding: 7px 13px;
+        border-radius: 4px;
+    }
+
+    &--link:hover
+    {
+        color: #fff;
+    }
+}

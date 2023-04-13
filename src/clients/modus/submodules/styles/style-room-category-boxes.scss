@@ -1,0 +1,19 @@
+ul#room-categories-conteiner
+{
+    display:flex;
+    column-gap: 7px;
+    
+    li
+    {
+        flex-grow: 1;
+        height: auto;
+        
+        a
+        {
+            height: auto;
+            background: -moz-linear-gradient(top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%);
+            background: -webkit-linear-gradient(top, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.3) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.3) 100%);
+        }
+    }
+}

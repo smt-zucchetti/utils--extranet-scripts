@@ -1,0 +1,12 @@
+.cond .pay-cond-short:first-child
+{
+  position: relative;
+  color: transparent;
+}
+.cond .pay-cond-short:first-child::after
+{
+  content: '48 Hour Cancellation';
+  color: rgb(34, 34, 34);
+  position: absolute;
+  left: 0;
+}

@@ -1,0 +1,30 @@
+$darkBackground1: #555;
+$darkBackground2: #999;
+$darkText1: #333;
+$accentColor1: #0072BA;
+
+$texts: $darkText1;
+$lightBackground: $darkBackground1;
+$darkBackground: $darkBackground1;
+$rolloverLightButtons: $accentColor1;
+$buttons1: $accentColor1; /* (continue, book) */
+$buttons2: $accentColor1; /* (select) */
+$rolloverButtons: darken($accentColor1,20%); /* (continue, book, select) */
+
+$pastDaysWD: $darkBackground2;
+$pastDaysWE: $darkBackground2;
+$availDaysWD: #fff;
+$availDaysWE: $accentColor1;
+$unavailDaysWD: #fff url(https://reservations.verticalbooking.com/img_templ/img_stili_17503/unavail.png) 60% 50%/44% no-repeat !important;
+$unavailDaysWE: #fff url(https://reservations.verticalbooking.com/img_templ/img_stili_17503/unavail.png) 60% 50%/44% no-repeat !important;
+$minStayWD: #f9ffa8;
+$minStayWE: #e8ef96;
+
+$widgetBackground: aliceblue;
+$widgetColor: $darkText1;
+
+$discountCodeButtonBackground: $accentColor1;
+$discountCodeButtonColor: #fff;
+$pageBackgroundColor: #ccc;
+$darkBackgroundColor: #fff;
+$lightBackgroundColor: #fff;

@@ -1,0 +1,7 @@
+// removes "* Best price - USD - 1 night" on step 1, "children 0" on step 2
+#dida .dida_dx,
+#riepilogo_viaggio .viaggio .eti:last-of-type
+{
+    display: none;
+}
+    

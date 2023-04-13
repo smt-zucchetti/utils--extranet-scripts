@@ -1,0 +1,42 @@
+html {
+    position: relative;
+}
+
+#propLogo 
+{
+    position: absolute;
+    top: 30px;
+    left: 130px;
+    z-index: 2;
+    width: 165px;
+}
+
+#header_mobile
+{
+    position: static;
+}
+
+@media only screen and (max-width: 1720px)
+{
+    #propLogo 
+    {
+        width: 140px;
+        left: 10px;
+    }
+    
+    #step
+    {
+        margin-top: 83px;
+    }
+}
+
+
+@media only screen and (max-width: 960px)
+{
+    #propLogo 
+    {
+        right: 0;
+        left: auto;
+        width: 100px;
+    }
+}

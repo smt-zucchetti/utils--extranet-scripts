@@ -1,0 +1,5 @@
+// Removes pricing from Premium Flex Calendar dates 
+.day_box:not(.disp_min_stay) .day_text *
+{
+    display:none !important;
+}

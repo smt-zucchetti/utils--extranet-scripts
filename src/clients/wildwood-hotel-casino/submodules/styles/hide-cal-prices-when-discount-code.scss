@@ -1,0 +1,12 @@
+#calendar .day_box.available .day_text
+{
+    .from, .prices, .day_nights
+    {
+        display: none;        
+    }
+}
+
+#seleziona_giorni li .prezzo
+{
+    display: none;
+}

@@ -1,0 +1,13 @@
+.custom-message-box
+{
+    background-color: navy !important;
+    color: #fff !important;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    font-weight: 700;
+    
+    &--content
+    {
+        padding: 10px !important;
+    }
+}

@@ -1,0 +1,95 @@
+body
+{
+  font-family: var(--font) !important;
+}
+
+/* 
+ * COLORS
+ */
+
+.accordion-close .freccia
+{
+    background: var(--primary);
+}
+
+/*
+ * FONT WEIGHT
+ */
+
+#scheda_link .spento > .sx
+{
+  font-weight: var(--bold);
+}
+
+#discount-code-button,
+#tabs li a
+{
+  font-weight: var(--semibold);
+}
+
+/* 
+ * BUTTONS
+ */
+
+#discount-code-button,
+.room-rate-button-box-item .reserve a.select_room.unlock
+{
+    background-color: var(--primary);
+    
+    &:hover
+    {
+        background-color: var(--mediumprimary) !important;
+    }
+}
+
+/*
+ * OTHER
+ */
+
+.conferma_inviata_msg
+{
+    background: var(--primary) !important;
+}
+
+#social * 
+{
+    display: none;
+}
+
+#vantaggi #social *
+{
+    display: initial;
+}
+
+form#dati_personali #contenitore_campi .row label::before
+{
+    content: '' !important;
+}
+
+.box_gallery.gallery
+{
+    .prev1, .next1
+    {
+        display: none;
+    }
+}
+
+#seleziona_giorni 
+{
+    .checkin.attivo
+    {
+        background-color: #fff !important;
+    }
+    
+    ul li.attivo,
+    ul li.we
+    {
+        background-color: #fff !important;
+    }
+}
+
+#link_date_flessibili
+{
+    background-color: var(--lightgray) !important;
+}
+

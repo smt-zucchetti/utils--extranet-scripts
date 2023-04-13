@@ -1,0 +1,67 @@
+
+html.is-ada
+{
+    background: $pageBackgroundColor;
+    
+    #discount-code-button
+    {
+        background: $discountCodeButtonBackground;
+        color: $discountCodeButtonColor;
+    }
+    
+    .pulsanti a 
+    {
+        background: $discountCodeButtonBackground !important;
+        color: $discountCodeButtonColor !important;
+    }
+    
+    a,
+    .month_selector .month_button a,
+    #scheda_link a .dx,
+    input.qtyplus,
+    input.qtyminus,
+    #pag_pacchetti .button,
+    .day_box.past_date .day_number,
+    .accordion,
+    .row_titolo .sin,
+    .des,
+    #link-open-sheet:hover
+    {
+        color: $discountCodeButtonColor !important;
+    }
+    
+    @media only screen and (min-width: 980px) 
+    {
+        .tariffa .price 
+        {
+            color: $discountCodeButtonColor;
+        }
+    }
+    
+    .tab_carrello ul li:not(.sel) a
+    {
+        background: #cecece !important; 
+        color: #333 !important;
+    }
+    
+    .fancybox.link_dettagli_camera,
+    .price_day.tooltip,
+    #link-open-sheet,
+    footer .footer-link > a
+    {
+        color: #333 !important;
+    }
+    
+    .clock-block {
+        background: #ccc;
+        background-image: -webkit-linear-gradient(top, #fff, #ccc);
+        background-image: -moz-linear-gradient(top, #fff, #ccc);
+        background-image: -o-linear-gradient(top, #fff, #ccc);
+        background-image: linear-gradient(to bottom, #fff, #ccc);
+    }
+    
+    .day_box.past_date .day_number
+    {
+        background: $darkBackground1;
+    }
+}

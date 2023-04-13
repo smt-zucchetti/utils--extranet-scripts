@@ -1,0 +1,626 @@
+
+
+
+
+html.is-ada
+{
+    color: $texts;
+
+    /*
+    * Buttons 1
+    */
+    .text_ota_bold i.far.fa-check,
+    #scheda_pacchetto .prezzo_pacchetto .big,
+    .box_prezzo .riga.riga_totali .risultato,
+    .seleziona_giorni ul li .ok
+    {
+      color: $buttons1 !important;
+    }
+
+    #carrello_mobile .container .dx .continua,
+    .modification-buttons,
+    #pag_pacchetti .promo.aa,
+    #pag_pacchetti .promo.aa:hover,
+    .pulsante_stampa_conferma a, 
+    #pulsante_pkpass_download a, 
+    #pulsante_add_services a,
+    .dati_personali button, 
+    #richiesta_pulsante_cerca button,
+    .nessun_servizio .continua,
+    .riepilogo_servizi .continua,
+    #riga_pulsanti_cancellazione .modification-buttons, 
+    .customer_data .modification-buttons-row .modification-buttons, 
+    .credit_card_data .modification-buttons-row .modification-buttons, 
+    #box-modifica-occupazione .modification-buttons-row .modification-buttons, 
+    #box-modifica-date .modification-buttons-row .modification-buttons,
+    #coupon ul li a,
+    .riga .verifica.attivo,
+    .banner_comparativo .row_portale ul li.ufficiale,
+    .unlocker button,
+    #scheda .accordion-close .freccia,
+    {
+        background: $buttons1;
+    }
+    
+    .conferma_inviata_msg
+    {
+        background: #0C7610 !important;
+    }
+    
+    @media screen and (max-width: 960px) 
+    {
+        .tot_mob span.dx 
+        {
+            color: $buttons1;
+        }
+    }
+    
+    @media screen and (max-width: 680px)
+    {
+        .dati_personali button, #richiesta_pulsante_cerca button {
+            background: $buttons1;
+        }
+    }
+    
+    #persuasive-messages-general .message, #persuasive-messages-summary .message 
+    {
+        border-left: 3px solid $buttons1;
+    }
+    
+    .fancybox-inner #a_soluzioni_preventivo_mail,
+    .room-rate-button-box-item .reserve a,
+    input.myinput_seleziona.booking_btn_sel
+    {
+        background: $buttons1 !important;
+    }
+    
+    .persuasive-message-rate .message.visibile 
+    {
+        background: $buttons1 !important;
+    }
+    
+    @media only screen and (min-width: 1800px) 
+    {
+        #persuasive-messages-general .message, #persuasive-messages-summary .message {
+            border-right: 3px solid $buttons1;
+        }
+    }
+    
+    #header-mobile-riepilogo 
+    {
+        background: $buttons1;
+    }
+    
+    
+    /*
+     * Buttonss 2
+     */
+    .seleziona_giorni ul li .vai a.seleziona,
+    .accordion-close .freccia,
+    .blocco_tipo ul li .reserve a
+    {
+        background: $buttons2;
+    }
+    
+    @media screen and (max-width: 680px)
+    {
+        .accordion-close .freccia,
+        .blocco_tipo ul li .reserve a 
+        {
+            background: $buttons2;
+        }
+    }
+    
+    
+    /* 
+     * Dark Background
+     */
+    .sfondo_sel, 
+    #step .container ul li a .span_num .val, 
+    .title_comparison_first,
+    .select_valute .valute a,
+    .select_valute .box_valute .elenco_valute li a:hover,
+    .select_valute .valute a.spento:hover,
+    .select_valute2 .valute a,
+    .select_lang .lang a,
+    .select_lang .lang a.spento:hover,
+    .select_lang2 .lang a,
+    .riga h2,
+    .riga .verifica,
+    .riga .inserisci_sconto:hover,
+    .riga .messaggio_procedi,
+    #coupon h2,
+    .slick-prev:hover, 
+    .slick-prev:focus, 
+    .slick-next:hover, 
+    .slick-next:focus,
+    .tit_vantaggi h2,
+    #pag_pacchetti .promo:hover,
+    #pag_pacchetti .element-item .box_offerta .descri_pacchetto h3.name,
+    #pag_pacchetti .element-item .box_offerta .prezzo_pacchetto .big,
+    input.qtyplus:hover, input.qtyminus:hover,
+    .campo_servizi h2,
+    .campo_servizi .accordion-open .freccia,
+    .campo_servizi .accordion-close .freccia,
+    .campo_servizi .blocco_servizio .tariffa_servizio .row .qta a.seleziona_orario:hover, 
+    .campo_servizi .blocco_servizio .tariffa_servizio .row .qta a.seleziona_orario.active,
+    #scheda .accordion-open .freccia,
+    #scheda .accordion-open,
+    #nome_hotel.nome,
+    #nome_hotel,
+    .chart_selector a:hover, .chart_selector a.active,
+    .seleziona_giorni .checkin.attivo a:hover,
+    .box_concludi .riga.riga_totali.definitivo,
+    .calendar_row .day_box .day_text .reserve_button a,
+    .seleziona_camera h2,
+    .accordion-open .freccia,
+    .unlocker h2,
+    .campi_dati h2, 
+    #form_salvataggio_prenotazione .titolo_tabella
+    {
+      background: $darkBackground;
+    }
+    
+    .carrello .contenuto .box_contenuto .riga .pulsanti a:hover 
+    {
+        background: $darkBackground !important;
+    }
+    
+    .month_selector .month_button.disabled, 
+    .month_selector .month_button.disabled:hover 
+    {
+        background-color: $darkBackground;
+    }
+    
+    .tariffe li h2 .nome_camera,
+    a:hover,
+    .row_box_portale,
+    .banner_comparativo .row_portale ul li .blocco .icona, 
+    .banner_comparativo .row_portale ul li .blocco .prezzo,
+    .banner_comparativo .row_portale ul li .blocco .prezzo .tariffa_comp,
+    #scheda_link a,
+    .row_camera.occupazione .cancel i.fa:hover
+    {
+        color: $darkBackground;
+    }    
+    
+    .chart_selector a 
+    {
+        border: 1px solid $darkBackground;
+    }
+ 
+    .blocco_vantaggi ul.vantaggio li:before,
+    .blocco_vantaggi ul.book li:before
+    {
+        color: $darkBackground; /* or whatever color you prefer */
+    }
+
+    .titolo, #step .container ul li a 
+    {
+        border-bottom: 3px solid $darkBackground;
+    }
+    
+    #carrello_mobile,
+    .select_valute2 .valute a.spento:hover,
+    .select_lang2 .lang a.spento:hover
+    {
+        background: $darkBackground;
+        border-top: 1px solid $darkBackground;
+    }
+    
+    @media print 
+    {
+        pre, blockquote 
+        {
+            border: 1px solid $darkBackground;
+        }
+    }
+    
+    @media screen and (max-width: 960px) 
+    { 
+        .pmenu span,
+        .box_concludi .riga.riga_totali.definitivo,
+        .carrello .contenuto .box_contenuto .riga .pulsanti a:hover
+        {
+            background: $darkBackground;
+        }
+         
+        .pmenu span:before, .pmenu span:after 
+        {
+            background-color: $darkBackground;
+        }
+        
+        #hp a 
+        {
+            color: $darkBackground;
+        }
+    }
+    
+    @media screen and (max-width: 680px)
+    {
+        .accordion-open,
+        #coupon h2
+        {
+            background: $darkBackground;
+        }
+    }
+    
+    #cross_selling #tab-selction-group ul li.active a,
+    #cross_selling #search-summary .nome-hotel h1,
+    #hotel-list .col-hotel .intestazioneStruttura h1,
+    #hotel-list .col-hotel .intestazioneStruttura h1 a
+    {
+      color: $darkBackground;
+    }
+    
+    .tabs-servizi-link span.freccia,
+    .col-hotel .info-bar .reserve-button .myinput_seleziona
+    {
+      background: $darkBackground;
+    }
+    
+    .blocco_tipo ul li.room-rate-list:last-of-type 
+    {
+      border-bottom: /*2px solid #999999*/ 3px solid $darkBackground;
+    }
+    
+    .room-rate-occupations-box 
+    {
+      border-bottom: 3px solid $darkBackground;
+    }
+    
+    @media only screen and (min-width: 960px) 
+    {
+        .select_lang .box_lingue .elenco_lingue li a:hover {
+            background: $darkBackground;
+        }
+    }
+    
+    @media only screen and (min-width: 980px) {
+        .tariffa .price 
+        {
+            color: $darkBackground;
+        }
+    }
+
+    .message p a.open:hover 
+    {
+        background: $darkBackground !important;
+    }
+
+
+    /*
+     * Light Background
+     */
+    #cont_finestra_portale, 
+    .banner_comparativo .row_portale ul,
+    .select_valute2 .box_valute .elenco_valute li a:hover,
+    .select_lang .box_lingue .elenco_lingue li a:hover,
+    #scheda_link a .dx,
+    .select_lang2 .box_lingue .elenco_lingue li a:hover,
+    .riga .pulsanti a,
+    .tab_carrello ul li a,
+    .stile_carrello,
+    #pacchetti,
+    .riga .pulsanti_servizio a,
+    .viaggio .eti .dx,
+    .box_riepi.modification i,
+    .box_riepi.modification .riga a:hover,
+    input.qtyminus,
+    input.qtyplus,
+     .blocco_vantaggi h3,
+    #pag_pacchetti .what_blocco .blocco_testo,
+    #pag_pacchetti .promo,
+    #pag_pacchetti .button,
+    .riepilogo_servizi,
+    .campo_servizi .blocco_servizio .tariffa_servizio .row.fascia_oraria ul li,
+    .campo_servizi .blocco_servizio .tariffa_servizio .row.fascia_oraria,
+    .campo_servizi .blocco_servizio .tariffa_servizio .row .qta a.seleziona_orario,
+    .campo_servizi .accordion-open,
+    .campo_servizi .accordion,
+    .row_titolo,
+    .container_tipo,
+    .accordion-open,
+    .accordion,
+    .tabs_nav_servizi li a,
+    .panels,
+    .tabs_nav li a,
+    .seleziona_camera h2 .val,
+    .container_scheda,
+    .month_selector .month_button,
+    .seleziona_giorni .checkin.attivo a,
+    .box_concludi,
+    .blocco_camera-title.aa,
+    #scheda .accordion,
+    ul.scheda_tabs li a
+    {
+        background: $lightBackground;
+    }
+    
+    .clock-block 
+    {
+        background: $lightBackground;
+        background-image: -webkit-linear-gradient(top, #fff, $lightBackground);
+        background-image: -moz-linear-gradient(top, #fff, $lightBackground);
+        background-image: -o-linear-gradient(top, #fff, $lightBackground);
+        background-image: linear-gradient(to bottom, #fff, $lightBackground);
+    }
+    
+    @media screen and (max-width: 960px) 
+    {
+        .carrello .contenuto .box_contenuto .riga .pulsanti a,
+        .seleziona_giorni .checkin.attivo a,
+        .modifica,
+        .accordion,
+        #pag_pacchetti .promo
+        {
+            background: $lightBackground;
+        }
+    }
+ 
+    @media screen and (max-width: 680px) 
+    {
+        .accordion,
+        .accordion-open .freccia,
+        .container_tipo,
+        .row_titolo
+        {
+            background: $lightBackground;
+        }
+    }
+    
+    @media screen and (min-width: 1140px) 
+    {
+        .accordion 
+        {
+            background: $lightBackground;
+        }
+    }
+    
+    #tab_servizi .tabs_nav_servizi li > a:hover,
+    .tab_carrello ul li.sel a,
+    #a_soluzioni_preventivo_mail:hover,
+    #box-risultati .no_soluzioni #no_soluzioni_cross_selling,
+    #cross_selling #search-summary .nome-hotel,
+    #cross_selling #tab-selction-group ul li a,
+    .hotel-results-table .rate-row.rate-row-title,
+    #hotel-list .box-hotel-info .min-price,
+    .fancybox-inner #alternative-offers-details .campo
+    {
+        background: $lightBackground;
+    }
+    
+    .hotel-results-table .rate-row .more-results 
+    {
+        background: $lightBackground;
+        border: 1px solid $lightBackground;
+    }
+    
+    #box_metodi_pagamento_alternativi .campi_dati .choose-payment.selected_payment 
+    {
+        background: $lightBackground;
+    }
+     
+    @media only screen and (min-width: 960px) 
+    {
+        .select_valute .box_valute .elenco_valute li a, .select_lang .box_lingue .elenco_lingue li a {
+            background: $lightBackground;
+        }
+    }
+    
+    /*
+     * Rollover Buttons
+     */
+    
+    #carrello_mobile .container .dx .continua:hover,
+    .modification-buttons:hover,
+    .unlocker button:hover,
+    .dati_personali button:hover, #richiesta_pulsante_cerca button:hover,
+    .nessun_servizio .continua:hover,
+    .riepilogo_servizi .continua:hover,
+    .blocco_tipo ul li .reserve a:hover,
+    .seleziona_giorni ul li .vai a.seleziona:hover,
+    .riga .verifica:hover, .riga .verifica.attivo:hover,
+    #coupon ul li a:hover,
+     #riga_pulsanti_cancellazione .modification-buttons:hover
+    {
+        background: $rolloverButtons;
+    }
+    
+    @media screen and (max-width: 680px)
+    {
+        .blocco_tipo ul li .reserve a:hover 
+        {
+            background: $rolloverButtons;
+        }
+    }
+    
+    .fancybox-inner #a_soluzioni_preventivo_mail:hover 
+    {
+        background: $rolloverButtons;
+    }
+    
+    .room-rate-button-box-item .reserve a:hover 
+    {
+        background: $rolloverButtons;
+    }
+    
+    input.myinput_seleziona.booking_btn_sel:hover
+    {
+        background: $rolloverButtons;
+    }
+    
+ 
+     /*
+     * Rollover Light Buttons
+     */
+  
+    #scheda_link a.spento:hover,
+    .riga .pulsanti_servizio a:hover,
+    .modifica:hover,
+    .blocco_tipo ul li .reserve a.unlock:hover
+    {
+        background: $rolloverLightButtons;
+    }
+    
+    .tariffe li 
+    {
+        border-bottom: 1px dotted $rolloverLightButtons;
+    }
+    
+    .dati_personali textarea:focus, .dati_personali input:focus 
+    {
+        border-color: $rolloverLightButtons;
+    }
+
+    .month_selector .month_button:hover 
+    {
+        background-color: $rolloverLightButtons
+    }
+    
+    @media screen and (max-width: 960px)
+    {
+        .seleziona_giorni .checkin.attivo a:hover 
+        {
+            background: $rolloverLightButtons
+        }     
+    }
+    
+    @media screen and (max-width: 680px)
+    {
+        .dati_personali textarea:focus, 
+        .dati_personali input:focus 
+        {
+            border-color: $rolloverLightButtons;
+        }
+        
+        .dati_personali button:hover, #richiesta_pulsante_cerca button:hover 
+        {
+            background: $rolloverLightButtons;
+        }
+    }
+ 
+    .message p a.open 
+    {
+        background: $rolloverLightButtons !important;
+    }
+
+
+    /*
+     * Texts
+     */
+    a,
+    .select_lang .box_lingue .elenco_lingue li a,
+    .select_lang .lang a.spento,
+    .select_valute .valute a.spento,
+    .select_valute .box_valute .elenco_valute li a,
+    #hp a, 
+    #group_link a,
+    .select_valute2 .valute a.spento,
+    .select_valute2 .box_valute .elenco_valute li a,
+    .select_lang2 .box_lingue .elenco_lingue li a,
+    #scheda_link a.spento,
+    .blocco_camera-title:hover,
+    .blocco_camera-title,
+    .clock-day,
+    .clock-unit,
+    .clock-val,
+    .month_selector .month_button a,
+    .custom_select select,
+    .day_box.past_date .day_number,
+    .seleziona_camera .eti_lines .riga_riepilogo_date .data_ricerca .ex,
+    #form_salvataggio_prenotazione .table div input[type="text"],
+    #pag_pacchetti .element-item,
+    .select_lang2 .lang a.spento,
+    .calendar_row .day_box .day_text,
+    .custom_select:after,
+    .unlocker input[type=text], 
+    .unlocker input[type=number], 
+    .unlocker textarea,
+    .campo_servizi .blocco_servizio .campo_note_servizio input
+    {
+        color: $texts;
+    }
+    
+    .campo .foto .galleria,
+    .campo .foto .lente
+    {
+        color: $texts !important
+    }
+    
+    @media screen and (max-width: 960px) 
+    {
+        #header_mobile a, #header_mobile a:hover,
+        #step_mobile .container ul li a,
+        .pulsante_accordion a,
+        #pag_pacchetti .element-item,
+        .carrello .contenuto .box_contenuto .riga .inserisci_sconto
+        {
+            color: $texts;
+        }
+    }
+    
+    @media screen and (max-width: 680px)
+    {
+        .dati_personali textarea, 
+        .dati_personali inputinput[type="text"],
+         #pag_pacchetti .element-item
+        {
+            color: $texts;
+        }
+    }
+    
+    @media screen and (min-width: 1140px) 
+    {
+        #pag_pacchetti .element-item 
+        {
+            color: $texts;
+        }
+    }
+    
+    
+    /*
+     * Hybrids
+     */
+
+    .modifica 
+    {
+        background: $lightBackground;
+        color: $texts;
+    }
+
+    .pause1:hover, 
+    .chiudi_gallery:hover, 
+    .start1:hover, 
+    .prev1:hover, 
+    .next1:hover 
+    {
+        background: $lightBackground;
+        color: $darkBackground;
+    }
+
+    .unlocker input:focus 
+    {
+        border-color: $rolloverLightButtons;
+        color: $texts;
+    }
+    
+    a#link_date_flessibili
+    {
+        background: $accentColor1;
+    }
+    
+    .text_ota_bold ul li.far.fa-check,
+    .text_ota_bold ul li,
+    .row_portale.ota_comparison_new ul li *,
+    .viaggio .dx
+    {
+        color: #fff !important;
+    }
+    
+    a.blocco_camera-title.selezionato,
+    .tariffa_servizio.no_giorno.single_room .row
+    {
+        color: $texts !important;
+    }
+}

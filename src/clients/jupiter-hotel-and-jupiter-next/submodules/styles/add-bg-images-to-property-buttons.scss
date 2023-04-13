@@ -1,0 +1,17 @@
+ul#room-categories-conteiner li
+{
+    &:first-of-type
+    {
+        background-image: url(https://reservations.verticalbooking.com/img_templ/img_stili_17288/next-button-image.jpg);
+    }
+    
+    &:last-of-type
+    {
+        background-image: url(https://reservations.verticalbooking.com/img_templ/img_stili_17288/jupiter-button-image.jpg);
+    }
+    
+    &:not(.active)
+    {
+        opacity: .51;
+    }
+}

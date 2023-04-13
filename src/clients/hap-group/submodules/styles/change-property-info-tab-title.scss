@@ -1,0 +1,16 @@
+#scheda_hotel ul.scheda_tabs li a[href='#scheda_caratteristiche']
+{
+    color: transparent;
+    position: relative;
+    
+    &::after
+    {
+        content: 'Additional Info';
+        position: absolute;
+        top: 0;
+        color: #000;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+}

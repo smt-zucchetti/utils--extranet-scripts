@@ -1,0 +1,18 @@
+#price-checker 
+{
+    .ota_comparison_banner h2
+    {
+        background-color: var(--primary);
+    }
+    
+    li.score
+    {
+        background-color: var(--lightgray);
+    }
+    
+    li.ufficiale
+    {
+        background-color: var(--primary) !important;
+        color: #fff !important;
+    }
+}

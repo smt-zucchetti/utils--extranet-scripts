@@ -1,0 +1,176 @@
+$pastDaysWD: var(--gray);
+$pastDaysWE: var(--gray);
+$availDaysWD: #fff;
+$availDaysWE: #fff;
+$unavailDaysWD: #fff url(https://reservations.verticalbooking.com/img_templ/img_stili_17503/unavail.png) 60% 73%/38% no-repeat !important;
+$unavailDaysWE: #fff url(https://reservations.verticalbooking.com/img_templ/img_stili_17503/unavail.png) 60% 73%/38% no-repeat !important;
+$minStayWD: var(--mediumprimary);
+$minStayWE: var(--mediumprimary);
+
+
+.day_box
+{
+    &.past_date, &.past_date.weekend,
+    &.available, &.available.weekend, 
+    &.disp_min_stay, &.disp_min_stay.weekend,
+    &.no-disp, &.no-disp.weekend
+    {
+        transition: background-color .2s ease-in;
+    }
+    
+    &.past_date 
+    {
+        background: $pastDaysWD;
+    }
+    &.past_date.weekend
+    {
+        background: $pastDaysWE;
+    }
+    
+    &.available:not(.weekend)
+    {
+        background: $availDaysWD;
+        
+        *,
+        .day_number,
+        .day_text > .from, 
+        .day_text > .prices, 
+        .day_text > .day_nights
+        {
+            background: $availDaysWD !important;
+        }
+    }
+    &.available.weekend 
+    {
+        background: $availDaysWE;
+        
+        .day_number,
+        .day_text > .from, 
+        .day_text > .prices, 
+        .day_text > .day_nights
+        {
+            background: $availDaysWE !important;
+        }
+    }
+    
+    &.no-disp > .day_number
+    {
+        background: #fff;   
+    }
+    &.no-disp,
+    &.no-disp.other_month
+    {
+        background: $unavailDaysWD;
+    }
+    &.no-disp.weekend
+    {
+        background: $unavailDaysWE;
+    }
+    
+    &.disp_min_stay
+    {
+        background: $minStayWD;
+        color: #fff;
+        
+        .day_number,
+        .day_text > .from, 
+        .day_text > .prices, 
+        .day_text > .day_nights
+        {
+            background: $minStayWD !important;
+            color: #fff !important;
+        }
+    }
+    &.disp_min_stay.weekend 
+    {
+        background: $minStayWE;
+        color: #fff;
+    }
+    
+    .day_number
+    {
+        background: none;
+    }
+}
+
+.leg_available, 
+.leg_unavailable, 
+.leg_min_stay
+{
+    transition: background-color .2s ease-in;
+}
+
+.seleziona_giorni ul li
+{
+    .available, .seleziona, .no_available
+    {
+        transition: background-color .2s ease-in;
+    }
+}
+
+#legenda_calendario
+{
+    .leg_available
+    {
+        background: $availDaysWD !important;
+    }    
+    
+    .leg_min_stay
+    {
+        background: $minStayWD;
+    }
+    
+    .leg_unavailable
+    {
+        background: $unavailDaysWD;
+        background-size: contain !important;
+        border: none;
+    }
+}
+
+
+
+.seleziona_giorni ul li
+{
+    background: $availDaysWD;
+    
+    & .available,
+    & .available ~ .vai > .seleziona
+    {
+        background: $availDaysWD;
+        border: 1px solid #333;
+        color: #333 !important;
+    }
+    & .available ~ .vai > .seleziona:hover
+    {
+        background: darken($availDaysWD, 40%);
+        color: #fff;
+    }
+    
+    .no_available
+    {
+        background: $unavailDaysWD;
+        background-size: contain !important;
+        border: none !important;
+    }
+}
+
+.contenuto > .t-center > a
+{
+    text-decoration: underline;
+}
+
+.seleziona_giorni ul li .disp.available
+{
+    background-color: $availDaysWD;
+}
+
+body.INDblackwhite 
+{
+    .seleziona_giorni ul li .available, .seleziona_giorni ul li .available ~ .vai > .seleziona
+    {
+        color: #fff !important;
+    }
+}
+
+

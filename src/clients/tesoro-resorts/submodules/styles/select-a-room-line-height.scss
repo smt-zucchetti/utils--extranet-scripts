@@ -1,0 +1,35 @@
+body
+{
+    #seleziona_camera_title .tit
+    {
+        color: transparent;
+    
+        &::after
+        {
+            display: block;
+            color: #fff;
+            line-height: 1.4em;
+            font-size: 1.3em;
+        }
+    }
+    #seleziona_camera_title .tit::after
+    {
+        content: 'Select the next room';
+    }
+    
+    &.esp #seleziona_camera_title .tit::after
+    {
+        content: 'Seleccione la siguiente habitación';
+    }    
+}
+
+
+
+/*#seleziona_camera_title .tit
+{
+  color: #fff !important;
+}
+#seleziona_camera_title .tit::after
+{
+  content: '';
+}*/

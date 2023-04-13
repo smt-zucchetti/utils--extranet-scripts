@@ -1,0 +1,18 @@
+.inserted-anchor
+{
+    font-size: 1.5em;
+    padding: 10px 0;
+    display: inline-block;
+    color: var(--primary);
+    margin-left: 10px;
+}
+
+a.inserted-anchor
+{
+    text-decoration: underline;
+    
+    &:hover
+    {
+        text-decoration: none;
+    }
+}

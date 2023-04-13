@@ -1,0 +1,30 @@
+$darkBackground1: #555;
+$darkBackground2: #999;
+$darkText1: #333;
+$accentColor1: #0072BA;
+
+$texts: $darkText1;
+$lightBackground: $darkBackground1;
+$darkBackground: $darkBackground1;
+$rolloverLightButtons: $accentColor1;
+$buttons1: $accentColor1; /* (continue, book) */
+$buttons2: $accentColor1; /* (select) */
+$rolloverButtons: darken($accentColor1,20%); /* (continue, book, select) */
+
+$pastDaysWD: $darkBackground2;
+$pastDaysWE: $darkBackground2;
+$availDaysWD: #c2fec5;
+$availDaysWE: #c2fec5;
+$unavailDaysWD: #FFDDDD !important;
+$unavailDaysWE: #FFDDDD !important;
+$minStayWD: #c2fec5;
+$minStayWE: #c2fec5;
+
+$widgetBackground: aliceblue;
+$widgetColor: $darkText1;
+
+$discountCodeButtonBackground: $accentColor1;
+$discountCodeButtonColor: #fff;
+$pageBackgroundColor: #ccc;
+$darkBackgroundColor: #fff;
+$lightBackgroundColor: #fff;

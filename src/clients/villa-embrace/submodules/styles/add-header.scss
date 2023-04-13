@@ -1,0 +1,45 @@
+/*.villa-header
+{
+    display: flex;
+    position: relative;
+    
+    &--logo-anchor
+    {
+        margin: 0 auto;
+    }
+    
+    &--menu 
+    {
+        list-style: none;
+        position: absolute;
+        font-size: 30px
+        margin: 0;
+        padding: 0;
+    }
+    
+    &--menu.is-active
+    {
+                width: 100%;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        height: 100%;
+        background: #eaeced;
+        align-items: center;
+    }
+    
+    &--menu li
+    {
+        display: none;
+    }
+    
+     &--menu.is-active li
+     {
+         display: initial;
+     }
+    
+    &--menu li a {
+        font-size: 30px;
+        padding: 4px 14px;
+    }
+}*/

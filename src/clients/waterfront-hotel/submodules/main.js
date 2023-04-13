@@ -1,0 +1,1 @@
+export * from './_change-results-page-cancellation-policy-text';

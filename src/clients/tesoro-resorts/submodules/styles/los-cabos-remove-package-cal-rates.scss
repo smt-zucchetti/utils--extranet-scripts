@@ -1,0 +1,7 @@
+body#pag_pacchetti
+{
+    .day_box:not(.disp_min_stay) .day_text > span 
+    {
+        display: none !important;
+    }
+}

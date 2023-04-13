@@ -1,0 +1,16 @@
+#scheda_link .dx,
+.campo_scheda
+{
+    display: none;
+}
+
+#link-open-sheet
+{
+    &:hover,
+    &:focus
+    {
+        background: unset !important;
+        cursor: unset !important;
+        color: #222 !important;
+    }
+}

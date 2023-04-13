@@ -1,0 +1,95 @@
+html.ada-widget-override-styles
+{
+    background: black !important;
+    
+    .INDblackwhite
+    {
+        .day_box
+        {
+            //.INDblackwhite .day_box.available .day_text > span.from, span.prices, span.day_nights
+            
+            &.available
+            {
+                .day_text >
+                {
+                    .from,
+                    .prices,
+                    .day_nights
+                    {
+                        background-color: green !important;
+                        color: #fff !important;
+                        opacity: 1 !important;        
+                    }
+                }
+            }
+            
+            .weekend.no-disp .day_text
+            {
+                color: #fff !important;
+                opacity: 1 !important;
+            }
+            
+            &.disp_min_stay
+            {
+                .prices,
+                .day_nights
+                {
+                    background-color: #000 !important;
+                    color: #fff !important;
+                }
+            }
+        }
+        
+        #legenda_calendario
+        {
+            .leg_available
+            {
+                background-color: green !important;
+            }
+            
+            .leg_unavailable
+            {
+                background-color: red !important;
+            }
+            
+            .leg_min_stay
+            {
+                background-color: #000 !important;
+            }
+        }  
+        
+        .section_classicamere
+        {
+            .accordion
+            {
+                margin-top: 1px;
+            }
+            
+            i.flaticon-keyboard53 
+            {
+                border: solid 1px;
+                border-radius: 50%;
+            }
+        }
+        
+        #unlocker
+        {
+            .blocco_concludi > button
+            {
+                outline: 1px dashed gold;
+            }
+            
+            #social .abcRioButtonContentWrapper
+            {
+                height: 38px;
+                width: 242px;   
+            }
+        }
+        
+        a
+        {
+            text-decoration: underline !important;
+        }
+    }
+}
+

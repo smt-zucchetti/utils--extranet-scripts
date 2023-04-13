@@ -1,0 +1,16 @@
+.contentbox_upgrade p,
+.contentbox_upgrade i,
+{
+    color: #c61921;
+}
+
+#upselling-button
+{
+    background-color: #f0c942; 
+    transition: background-color ease-in .2s;
+    
+    &:hover
+    {
+        background-color: #BD960F;
+    }
+}

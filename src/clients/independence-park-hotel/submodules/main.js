@@ -1,0 +1,1 @@
+export * from './_gtm-thank-you-page' 

@@ -1,0 +1,31 @@
+#nav-bar-top,
+#nav-bar-bottom,
+.cart-arr.active,
+#search-button > input[type='submit']
+{
+    background-color: var(--accent-color-dark);
+    color: #fff;
+}
+
+.spec-table table th
+{
+    color: var(--accent-color-dark);
+}
+
+.box-interno,
+.continue-button.active a, 
+.close-button.active a, 
+.package-continue-button.active a
+{
+    background-color: var(--accent-color-light);
+    color: #222;
+}
+
+.box-qr100 input, 
+.box-qr100 select, 
+.quantity-content select, 
+.tabella_accessori select, 
+.tabella_accessori input
+{
+    border-color: var(--accent-color-light);
+}

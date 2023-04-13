@@ -1,0 +1,26 @@
+#unlocker
+{
+    h2
+    {
+        color: transparent;
+    
+        @media screen and (max-width: 627px)
+        {
+            padding-top: 0;
+        }
+    
+        &::after
+        {
+            content: 'UNLOCK DEAL';
+            color: #fff;
+            display: block;
+            margin-top: -23px;
+        }
+    }
+    
+    .blocco_concludi.t-center,
+    #social
+    {
+        display: none;
+    }
+}

@@ -1,0 +1,10 @@
+ul.tariffe > li:last-of-type h2:last-of-type .nome_camera > span {
+    color: transparent;
+}
+
+ul.tariffe > li:last-of-type h2:last-of-type .nome_camera > span::after {
+    content: 'Name:';
+    color: #000;
+    position: absolute;
+    left: 0;
+}
