@@ -32,5 +32,5 @@ import('./submodules/styles/hide-property-info.scss');
 
 submodules.convertExperiments(); //this is the one
 
-//console.log('asdfg');
+
 
