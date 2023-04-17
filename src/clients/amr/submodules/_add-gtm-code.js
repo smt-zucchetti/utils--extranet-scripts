@@ -132,6 +132,8 @@ export function addGtmCode()
             {
                 if(brandId === 6)
                 {
+                    const totalConvertUsd = utils.BE_ATTRIBUTES.cmWidgetValues.totalConvertUsd !== null ? utils.BE_ATTRIBUTES.cmWidgetValues.totalConvertUsd : utils.BE_ATTRIBUTES.cmWidgetValues.total;
+                    
                     dataLayerStr =
                         `window.dataLayer = window.dataLayer || [];
                         window.dataLayer.push({
@@ -174,7 +176,7 @@ export function addGtmCode()
                             'category': 'Land Only',
                             'quantity': 1,
                             'checkInDate': '${utils.BE_ATTRIBUTES.cmWidgetValues.startDate}',
-                            'DLV – transactionTotal': '${utils.BE_ATTRIBUTES.cmWidgetValues.totalConvertUsd}',
+                            'DLV – transactionTotal': '${totalConvertUsd}',
                             'transactionProducts': [{
                                 'sku': '${utils.BE_ATTRIBUTES.cmWidgetValues.roomName} - ${utils.BE_ATTRIBUTES.cmWidgetValues.productCode}',
                                 'name': '${utils.BE_ATTRIBUTES.cmWidgetValues.roomName}',

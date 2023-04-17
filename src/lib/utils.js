@@ -904,6 +904,23 @@ export function gtm4StandardCode(gtmCode)
          */
         else if(BE_ATTRIBUTES.page === 'guest_info')
         {
+            const guestInfoItems = [...rooms].map((room, idx) => 
+            {
+                return {
+                    item_id: room.dataset['roomCod'], 
+                    item_name: room.dataset['roomName'], 
+                    item_category: 'Rooms',
+                    item_variant: room.dataset['productName'], 
+                    price: parseInt(room.dataset['total']), 
+                    // promotion_id: '@@OFFER_CODE@@',
+                    // promotion_name: '@@OFFER_NAME@@',
+                    quantity: parseInt(BE_ATTRIBUTES.cmWidgetValues.nights),
+                    index: ++idx                
+                };
+            });
+            
+            console.log('guestInfoItems', guestInfoItems);
+            
             eventObj = 
             {
                 event: 'begin_checkout',
@@ -919,20 +936,7 @@ export function gtm4StandardCode(gtmCode)
                     rooms_qty: parseInt(BE_ATTRIBUTES.cmWidgetValues.numRooms),
                     adults: parseInt(BE_ATTRIBUTES.cmWidgetValues.adults),
                     children: parseInt(BE_ATTRIBUTES.cmWidgetValues.children),
-                    // items: [...rooms].map((room, idx) => 
-                    // {
-                    //     return {
-                    //         item_id: room.dataset['roomCod'], 
-                    //         item_name: room.dataset['roomName'], 
-                    //         item_category: 'Rooms',
-                    //         item_variant: room.dataset['productName'], 
-                    //         price: parseInt(room.dataset['total']), 
-                    //         // promotion_id: '@@OFFER_CODE@@',
-                    //         // promotion_name: '@@OFFER_NAME@@',
-                    //         quantity: parseInt(BE_ATTRIBUTES.cmWidgetValues.nights),
-                    //         index: ++idx                
-                    //     };
-                    // })
+                    items: guestInfoItems
                 }
             }
         }
@@ -973,6 +977,8 @@ export function gtm4StandardCode(gtmCode)
                 }
             }
         }
+        
+        console.log(BE_ATTRIBUTES.page, eventObj);
         
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push(eventObj);
