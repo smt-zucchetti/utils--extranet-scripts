@@ -188,27 +188,53 @@ export function hideFacebookButtonOnGuestInfoPage()
     })
 }
 
-export function googleAnalyticsCode(gaCode)
-{
-    console.log('utils googleAnalyticsCode', gaCode);
+// export function googleAnalyticsCode(gaCode)
+// {
+//     (function(i,s,o,g,r,a,m)
+//     {
+//         i['GoogleAnalyticsObject']=r;
+//         i[r]=i[r] || function()
+//         {
+//             (i[r].q=i[r].q||[]).push(arguments)
+//         },
+//         i[r].l=1*new Date();
+//         a=s.createElement(o),
+//         m=s.getElementsByTagName(o)[0];
+//         a.async=1;
+//         a.src=g;
+//         m.parentNode.insertBefore(a,m)
+//     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
     
-    (function(i,s,o,g,r,a,m)
+//     ga('create', gaCode, 'auto');
+//     ga('send', 'pageview');
+// }
+
+export function universalAnalytics(uaCode)
+{
+    loadScriptAsync(`https://www.googletagmanager.com/gtag/js?id=${uaCode}`).then(() =>
     {
-        i['GoogleAnalyticsObject']=r;
-        i[r]=i[r] || function()
+        populateBeAttributes().then(() => 
         {
-            (i[r].q=i[r].q||[]).push(arguments)
-        },
-        i[r].l=1*new Date();
-        a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];
-        a.async=1;
-        a.src=g;
-        m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    console.log("ga('create', gaCode, 'auto')", ga('create', gaCode, 'auto'));
-    ga('create', gaCode, 'auto');
-    ga('send', 'pageview');
+            window.dataLayer = window.dataLayer || []
+            function gtag(){ dataLayer.push(arguments) }
+            
+            gtag('js', new Date());
+            gtag('config', uaCode);
+        
+            if(BE_ATTRIBUTES.page === 'thank_you_page')
+            {
+                const obj = 
+                {
+                    transaction_id: BE_ATTRIBUTES.cmWidgetValues.code,
+                    value: BE_ATTRIBUTES.cmWidgetValues.total,
+                    tax: BE_ATTRIBUTES.cmWidgetValues.totalTaxes,
+                    currency: BE_ATTRIBUTES.cmWidgetValues.currency
+                };
+                
+                gtag('event', 'purchase', obj);
+            }
+        })
+    })
 }
 
 export function discountCodeNonPassword()
@@ -974,5 +1000,41 @@ export function gtm4StandardCode(gtmCode)
         })(window,document,'script','dataLayer',gtmCode);
     });
 }
+
+export function ghaAdWords(id, label)
+{
+    populateBeAttributes().then(() =>
+    {
+        loadScriptAsync(`https://www.googletagmanager.com/gtag/js?id=AW-${id}`).then(() =>
+        {
+            const gtag = function() {
+                dataLayer.push(arguments);
+            };
+            
+            window.dataLayer = window.dataLayer || [];
+            gtag('js', new Date());
+            gtag('config', `AW-${id}`);
+        
+            if(BE_ATTRIBUTES.page === 'thank_you_page')
+            {
+                const eventObj = 
+                {     
+                    send_to: `AW-${id}/${label}`,
+                    value: BE_ATTRIBUTES.cmWidgetValues.total, 
+                    currency: BE_ATTRIBUTES.cmWidgetValues.currency,
+                    transaction_id: BE_ATTRIBUTES.cmWidgetValues.code,
+                };
+                gtag('event', 'conversion', eventObj);
+            }
+        });
+    });
+}
+
+
+
+
+
+
+
 
 

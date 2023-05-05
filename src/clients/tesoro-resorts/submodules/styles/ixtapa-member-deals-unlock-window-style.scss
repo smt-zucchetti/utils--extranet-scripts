@@ -1,0 +1,85 @@
+.unlocker-pane
+{
+    display: flex;
+    background: #2862CE;
+    padding: 6px;
+    
+    &--left-box,
+    &--right-box
+    {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 46px;
+    }
+    
+    &--header
+    {
+        background: transparent !important;
+        margin-bottom: 0 !important;
+        color: #444 !important;
+    }
+    
+    &--p
+    {
+        color: #444 !important;
+        font-size: 17px;
+        line-height: 2em;
+        margin: -6px 0 13px;
+        font-weight: 700;
+    }
+    
+    &--left-box-header
+    {
+        color: #fff !important;
+    }
+    
+    &--logo
+    {                   
+        filter: hue-rotate(0deg) brightness(102%) contrast(102%) invert(100%);
+        background: #ffff7f;
+        width: 120px;
+        padding: 12px;
+        margin-top: 11px;
+    }  
+    
+    &--right-box
+    {
+        background: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 9px;
+    }
+    
+    &--login-anchor 
+    {
+        width: auto !important;
+        float: right;
+        padding: 0 40px !important;
+        height: 40px;
+        line-height: 40px;
+        background: #2862CE;
+        display: block;
+        text-align: center;
+        color: #fff;
+        margin: 0px auto;
+        font-size: 1.4em;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        transition: none;
+    }
+    
+    &--login-anchor:hover
+    {
+        color: #fff !important;
+    }
+    
+    &--right-box-header
+    {
+        color: #fff !important;
+    }
+    
+                 
+}

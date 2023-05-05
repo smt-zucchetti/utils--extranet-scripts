@@ -1,3 +1,4 @@
 import * as utils from './../../lib/utils';
 
-utils.universalAnalytics('UA-110451305-1');
+utils.universalAnalytics('UA-215800552-1');
+

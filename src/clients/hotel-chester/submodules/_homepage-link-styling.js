@@ -1,4 +1,4 @@
-import * as utils from './../../../lib/utils'
+import * as utils from './../../../lib/utils';
 
 export function homepageLinkStyling()
 {
@@ -6,7 +6,7 @@ export function homepageLinkStyling()
 
     utils.waitForElement('#hp > .animsition-link').then(el =>
     {
-        el.childNodes[1].textContent = ' BACK TO HOME PAGE'
+        el.childNodes[1].textContent = ' BACK TO HOME PAGE';
     }) 
     
 }
