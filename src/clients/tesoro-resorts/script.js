@@ -14,4 +14,5 @@ submodules.addPerNightText();
 submodules.IxtapaOtaComparisonColors();
 submodules.sojernTag();
 //submodules.losCabosRemovePackageCalRates();
-//submodules.ixtapaMemberDealsUnlockWindowStyle();
+submodules.ixtapaMemberDealsUnlockPopupStyle();
+submodules.ixtapaMemberDealsUnlockListingStyle();

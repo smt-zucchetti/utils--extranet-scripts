@@ -27,15 +27,19 @@ export async function populateBeAttributes()
 	BE_ATTRIBUTES.cmValues = await _getCmValues(BE_ATTRIBUTES.page)
 	BE_ATTRIBUTES.cmWidgetValues = await _getCmWidgetValues(BE_ATTRIBUTES.page)
 
-    const propId = BE_ATTRIBUTES.cmValues.cmPropertyId
-	if(![15775,15776,15813,15815].includes(parseInt(BE_ATTRIBUTES.cmValues.cmPropertyId)) )
-	{
-    	BE_ATTRIBUTES.propId = await _getBeAttribute(BE_ATTRIBUTE_NAMES.propId)
-    	BE_ATTRIBUTES.styleId = await _getBeAttribute(BE_ATTRIBUTE_NAMES.styleId)
-    	BE_ATTRIBUTES.groupId = await _getBeAttribute(BE_ATTRIBUTE_NAMES.groupId)
-    	BE_ATTRIBUTES.brandId = await _getBeAttribute(BE_ATTRIBUTE_NAMES.brandId)
-    	BE_ATTRIBUTES.lang = await _getBeAttribute(BE_ATTRIBUTE_NAMES.lang)
-	}
+    if(BE_ATTRIBUTES.cmValues && BE_ATTRIBUTES.cmValues.cmPropertyId)
+    {
+    	if(['15775','15776','15813','15815'].includes(BE_ATTRIBUTES.cmValues.cmPropertyId) )
+    	{
+    	    return;
+    	}   
+    }
+	
+	BE_ATTRIBUTES.propId = await _getBeAttribute(BE_ATTRIBUTE_NAMES.propId);
+	BE_ATTRIBUTES.styleId = await _getBeAttribute(BE_ATTRIBUTE_NAMES.styleId);
+	BE_ATTRIBUTES.groupId = await _getBeAttribute(BE_ATTRIBUTE_NAMES.groupId);
+	BE_ATTRIBUTES.brandId = await _getBeAttribute(BE_ATTRIBUTE_NAMES.brandId);
+	BE_ATTRIBUTES.lang = await _getBeAttribute(BE_ATTRIBUTE_NAMES.lang);
 }
 
 export function addStylesToStylesheet(styles)
@@ -187,27 +191,6 @@ export function hideFacebookButtonOnGuestInfoPage()
         }
     })
 }
-
-// export function googleAnalyticsCode(gaCode)
-// {
-//     (function(i,s,o,g,r,a,m)
-//     {
-//         i['GoogleAnalyticsObject']=r;
-//         i[r]=i[r] || function()
-//         {
-//             (i[r].q=i[r].q||[]).push(arguments)
-//         },
-//         i[r].l=1*new Date();
-//         a=s.createElement(o),
-//         m=s.getElementsByTagName(o)[0];
-//         a.async=1;
-//         a.src=g;
-//         m.parentNode.insertBefore(a,m)
-//     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    
-//     ga('create', gaCode, 'auto');
-//     ga('send', 'pageview');
-// }
 
 export function universalAnalytics(uaCode)
 {
@@ -664,12 +647,17 @@ function _createAdaWidgetButton()
 
 function _getCmWidgetValues(page)
 {
+    let cmValues;
+    
     if(BE_ATTRIBUTES.beType ===  BE_TYPE.SP)
     {
-        return null
+        cmValues = cmData.SP_WIDGET_ATTRS;
+    }
+    else
+    {
+        cmValues = cmData.WIDGET_ATTRS[page]    
     }
     
-    const cmValues = cmData.WIDGET_ATTRS[page]
     const cmObj = {}
     if(cmValues)
     {
@@ -864,11 +852,6 @@ function _createGtm4ItemsArr(arr)
     const res = arr.map(obj => {
         return {key: obj.key, values: obj.value} 
     });
-    
-    
-     
-    //console.log('_addValuesToGtmObject', res);
-    //return res;
 }
 
 export function gtm4StandardCode(gtmCode)
@@ -1030,7 +1013,70 @@ export function ghaAdWords(id, label)
     });
 }
 
+export function addNewSojernCode()
+{
+    loadScriptAsync('https://static.sojern.com/utils/sjrn_autocx.js').then(() =>
+    {
+        populateBeAttributes().then(() =>
+        {
+            if(!['results', 'guest_info', 'thank_you_page'].includes(BE_ATTRIBUTES.page))
+            {
+                return;
+            }
+            
+            const params = {};
+                    
+            if(BE_ATTRIBUTES.page === 'results')
+            {
+                params.hpid = BE_ATTRIBUTES.cmWidgetValues.propertyId; /* Property ID */
+                params.pt = 'SEARCH'; /* Page Type */
+                params.hd1 = BE_ATTRIBUTES.cmWidgetValues.startDateNumbers; /* Check In Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
+                params.hd2 = BE_ATTRIBUTES.cmWidgetValues.endDateNumbers; /* Check Out Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
+            }
+            if(BE_ATTRIBUTES.page === 'guest_info')
+            {
+                params.hpid = BE_ATTRIBUTES.cmWidgetValues.propertyId; /* Property ID */
+                params.pt = 'SHOPPING_CART'; /* Page Type */
+                params.hcu = BE_ATTRIBUTES.cmWidgetValues.currency; /* Purchase Currency */
+            }
+            if(BE_ATTRIBUTES.page === 'thank_you_page')
+            {
+                params.hpid = BE_ATTRIBUTES.cmWidgetValues.propertyId; /* Property ID */
+                params.pt = 'CONVERSION'; /* Page Type */
+                params.hd1 = BE_ATTRIBUTES.cmWidgetValues.startDateNumbers; /* Check In Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
+                params.hd2 = BE_ATTRIBUTES.cmWidgetValues.endDateNumbers; /* Check Out Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
+                params.hr = BE_ATTRIBUTES.cmWidgetValues.rooms; /* Number of Rooms */
+                params.hc = BE_ATTRIBUTES.cmWidgetValues.roomType; /* Room type */
+                params.tch = BE_ATTRIBUTES.cmWidgetValues.children; /* Number of Children */
+                params.tad = BE_ATTRIBUTES.cmWidgetValues.adults; /* Number of Adults */
+                params.t = BE_ATTRIBUTES.cmWidgetValues.occupancy; /* Number of Travelers */
+                params.hp = BE_ATTRIBUTES.cmWidgetValues.total; /* Purchase Price */
+                params.hcu = BE_ATTRIBUTES.cmWidgetValues.currency; /* Purchase Currency */
+                params.hconfno = BE_ATTRIBUTES.cmWidgetValues.code; /* Confirmation Number */    
+            }
+    
+            /* Please do not modify the below code. */ 
+            try {params = Object.assign({}, sjrn_params, params);}catch(e){}
+            var cid = [];
+            var paramsArr = [];
+            var cidParams = [];
+            var pl = document.createElement('iframe');
+            var defaultParams = {"vid":"tou"};
+            for(let key in defaultParams) { params[key] = defaultParams[key]; };
+            for(let key in cidParams) { cid.push(params[cidParams[key]]); };
+            params.cid = cid.join('|');
+            for(let key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
+            pl.type = 'text/html';
+            pl.setAttribute('style','height:0; width: 0; display:none;');
+            pl.async = true;
+            pl.src = 'https://static.sojern.com/cip/w/s?id=186700&f_v=v6_js&p_v=1&' + paramsArr.join('&'); (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);     
+        });
+        
+    });
 
+    
+
+}
 
 
 

@@ -22,3 +22,4 @@ export * from './_alternate-dates-bg-white';
 export * from './_starting-from-price-add-comma';
 export * from './_adobe-tm-script';
 export * from './_hide-property-info';
+export * from './_fix-long-url';

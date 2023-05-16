@@ -1,0 +1,31 @@
+.blocco_tipo.is-unlock,
+{
+    background: #2862CE;
+    color: #fff;
+
+    .row_titolo
+    {
+        background: #2862CE;
+        color: #fff;
+    }
+
+    .row_titolo .sin h2
+    {
+        color: #fff;
+    }
+    
+    .price_day.tooltip
+    {
+        color: #fff;   
+    }
+    
+    .room-rate-button-box-item .reserve a.select_room.unlock:hover
+    {
+        background: #D47F00;
+    }
+    
+    .rate-details-link img
+    {
+        filter: brightness(0) invert(1);   
+    }
+}

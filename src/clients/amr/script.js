@@ -31,6 +31,5 @@ submodules.hidePropertyInfo();
 import('./submodules/styles/hide-property-info.scss');
 
 submodules.convertExperiments(); //this is the one
-
-
+submodules.fixLongUrl();
 

@@ -1,6 +1,6 @@
 import * as utils from './../../../lib/utils';
 
-export function ixtapaMemberDealsUnlockWindowStyle()
+export function ixtapaMemberDealsUnlockPopupStyle()
 {
     utils.populateBeAttributes().then(() =>
     {
@@ -11,6 +11,8 @@ export function ixtapaMemberDealsUnlockWindowStyle()
                 utils.waitForElement('#unlocker', false, 5000).then(unlocker =>
                 {
                     const moduleClass = 'unlocker-pane';
+                    
+                    const url = utils.BE_ATTRIBUTES.lang === 'esp' ? 'https://tesororewards.com/es/desbloquear' : 'https://tesororewards.com/es/';
                     
                     //const unlocker = document.getElementById('unlocker');
                     unlocker.classList.add(moduleClass);
@@ -50,18 +52,33 @@ export function ixtapaMemberDealsUnlockWindowStyle()
                     //Add Right Box Paragraph
                     const pElRight = document.createElement('div');
                     pElRight.classList.add(`${moduleClass}--p`);
-                    pElRight.textContent = utils.BE_ATTRIBUTES.lang === 'esp' ? 'Haga clic en el botón Iniciar sesión para iniciar sesión en su cuenta.' : 'Sign in to enjoy Tesoro Rewards price.';
+                    pElRight.textContent = utils.BE_ATTRIBUTES.lang === 'esp' ? 'Haga clic en el botón para iniciar sesión en su cuenta.' : 'Sign in to enjoy Tesoro Rewards price.';
                     rightBox.append(pElRight);
                     
-                    // //Add Right Box Login Button
+                    //Add Right Box Login Button
                     const loginAnchor = document.createElement('a');
-                    loginAnchor.classList.add(`${moduleClass}--login-anchor`);
-                    loginAnchor.setAttribute('href', 'https://tesororewards.com/es/');
+                    loginAnchor.classList.add(`${moduleClass}--login-button`);
+                    loginAnchor.setAttribute('href', url);
                     loginAnchor.setAttribute('target', '_blank');
                     loginAnchor.textContent = utils.BE_ATTRIBUTES.lang === 'esp' ? 'Iniciar Sesión' : 'Log In';
                     rightBox.append(loginAnchor);
+                    
+                    //Add Right Box Spanish Language Link]
+                    if(utils.BE_ATTRIBUTES.lang === 'esp')
+                    {
+                        const extraEspDiv = document.createElement('div');
+                        extraEspDiv.classList.add(`${moduleClass}--extra-esp-content`);
+                        extraEspDiv.textContent = '\u00BFNo tiene cuenta? ';
+                        const extraEspAnchor = document.createElement('a');
+                        extraEspAnchor.classList.add(`${moduleClass}--extra-esp-content-anchor`);
+                        extraEspAnchor.setAttribute('href', url); 
+                        extraEspAnchor.setAttribute('target', '_blank');
+                        extraEspAnchor.textContent = 'Regístrese aquí';
+                        extraEspDiv.append(extraEspAnchor);
+                        rightBox.append(extraEspDiv); 
+                    }
 
-                    import('./styles/ixtapa-member-deals-unlock-window-style.scss');   
+                    import('./styles/ixtapa-member-deals-unlock-popup-style.scss');   
                 });
             });
             

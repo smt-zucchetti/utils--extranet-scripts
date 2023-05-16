@@ -1,7 +1,7 @@
 const path = require('path')
 const glob = require('glob')
 
-const fileArr = glob.sync('./src/clients/*/{{pages/*.js,service-providers/*[0-9].js,script.js,first.js,last.js},all-pages.js}', {}).reduce((acc,cur) =>
+const fileArr = glob.sync('./src/clients/*/{{pages/*.js,service-providers/*[0-9].js,script.js,first.js,last.js,service-provider.js},all-pages.js}', {}).reduce((acc,cur) =>
 {
     const entry = cur.substring(6).slice(0,-3)
     acc[entry] = cur

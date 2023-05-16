@@ -25,9 +25,11 @@
     {
         color: #444 !important;
         font-size: 17px;
-        line-height: 2em;
+        //line-height: 2em;
         margin: -6px 0 13px;
         font-weight: 700;
+        text-align: center;
+        line-height: 1.3em;
     }
     
     &--left-box-header
@@ -52,7 +54,7 @@
         border-radius: 9px;
     }
     
-    &--login-anchor 
+    &--login-button 
     {
         width: auto !important;
         float: right;
@@ -71,7 +73,7 @@
         transition: none;
     }
     
-    &--login-anchor:hover
+    &--login-button:hover
     {
         color: #fff !important;
     }
@@ -81,5 +83,28 @@
         color: #fff !important;
     }
     
-                 
+    &--extra-esp-content
+    {
+        color: #444 !important;
+        font-size: 17px;
+        margin: 10px 0 8px;
+        font-weight: 700;
+        text-align: center;
+        line-height: 1.3em;
+    }
+    
+    &--extra-esp-content-anchor
+    {
+        color: #2862CE;
+        text-decoration: underline;
+    }
+    
+    &--extra-esp-content-anchor:hover
+    {
+        text-decoration: none;
+    }
 }
+
+
+
+

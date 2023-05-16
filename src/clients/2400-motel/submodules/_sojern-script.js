@@ -2,66 +2,66 @@ import * as utils from './../../../lib/utils';
 
 export function sojernScript()
 {
-    utils.populateBeAttributes().then(() => 
+    utils.loadScriptAsync('https://static.sojern.com/utils/sjrn_autocx.js').then(() =>
     {
-        if(!['results', 'guest_info', 'thank_you_page'].includes(utils.BE_ATTRIBUTES.page))
+        utils.populateBeAttributes().then(() =>
         {
-            return;    
-        }
-        
-        const params = 
-        {
-            hpid: '25153',
-            hc1: 'Vancouver', 
-            hs1: 'British Columbia', 
-            hn1: 'Canada',
-            hpr: '2400 Motor Court', 
-        }
-
-        if(utils.BE_ATTRIBUTES.page === 'results')
-        {
-            Object.assign(params, 
+            if(!['results', 'guest_info', 'thank_you_page'].includes(utils.BE_ATTRIBUTES.page))
             {
-                pt: 'SEARCH',
-                hd1: utils.BE_ATTRIBUTES.cmWidgetValues.startDateNumbers,
-                hd2: utils.BE_ATTRIBUTES.cmWidgetValues.endDateNumbers,
-            })
-        }
-        else if(utils.BE_ATTRIBUTES.page === 'guest_info')
-        {
-            Object.assign(params, 
+                return;
+            }
+            
+            const params = {};
+                    
+            if(utils.BE_ATTRIBUTES.page === 'results')
             {
-                pt: 'SHOPPING_CART',
-                hcu: utils.BE_ATTRIBUTES.cmWidgetValues.currency
-            })
-        }
-        else if(BE_ATTRIBUTES.page === 'thank_you_page')
-        {
-            Object.assign(params,
+                params.hpid = utils.BE_ATTRIBUTES.cmWidgetValues.propertyId; /* Property ID */
+                params.pt = 'SEARCH'; /* Page Type */
+                params.hd1 = utils.BE_ATTRIBUTES.cmWidgetValues.startDateNumbers; /* Check In Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
+                params.hd2 = utils.BE_ATTRIBUTES.cmWidgetValues.endDateNumbers; /* Check Out Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
+                params.ccid = localStorage.sjrn_ccid;
+            }
+            if(utils.BE_ATTRIBUTES.page === 'guest_info')
             {
-                pt: 'CONVERSION',
-                hd1: utils.BE_ATTRIBUTES.cmWidgetValues.startDateNumbers,
-                hd2: utils.BE_ATTRIBUTES.cmWidgetValues.endDateNumbers,
-                hr: utils.BE_ATTRIBUTES.cmWidgetValues.rooms, 
-                hc: utils.BE_ATTRIBUTES.cmWidgetValues.roomCodName,  
-                tch: utils.BE_ATTRIBUTES.cmWidgetValues.children,
-                tad: utils.BE_ATTRIBUTES.cmWidgetValues.adults,
-                t: utils.BE_ATTRIBUTES.cmWidgetValues.occupancy,
-                hp: utils.BE_ATTRIBUTES.cmWidgetValues.total,
-                hcu: utils.BE_ATTRIBUTES.cmWidgetValues.currency,
-                hconfno: utils.BE_ATTRIBUTES.cmWidgetValues.code,
-            })
-        }
-        
-        // Please do not modify the below code. 
-        params.et = {"HOME_PAGE":null,"SEARCH":"hs","PRODUCT":"hpr","SHOPPING_CART":"hcart","CONVERSION":"hc","TRACKING":null}[params.pt] || '';
-        var paramsArr = [];
-        for(let key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
+                params.hpid = utils.BE_ATTRIBUTES.cmWidgetValues.propertyId; /* Property ID */
+                params.pt = 'SHOPPING_CART'; /* Page Type */
+                params.hcu = utils.BE_ATTRIBUTES.cmWidgetValues.currency; /* Purchase Currency */
+                params.ccid = localStorage.sjrn_ccid;
+            }
+            if(utils.BE_ATTRIBUTES.page === 'thank_you_page')
+            {
+                params.hpid = utils.BE_ATTRIBUTES.cmWidgetValues.propertyId; /* Property ID */
+                params.pt = 'CONVERSION'; /* Page Type */
+                params.hd1 = utils.BE_ATTRIBUTES.cmWidgetValues.startDateNumbers; /* Check In Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
+                params.hd2 = utils.BE_ATTRIBUTES.cmWidgetValues.endDateNumbers; /* Check Out Date. Format yyyy-mm-dd. Ex: 2015-02-14 */
+                params.hr = utils.BE_ATTRIBUTES.cmWidgetValues.rooms; /* Number of Rooms */
+                params.hc = utils.BE_ATTRIBUTES.cmWidgetValues.roomType; /* Room type */
+                params.tch = utils.BE_ATTRIBUTES.cmWidgetValues.children; /* Number of Children */
+                params.tad = utils.BE_ATTRIBUTES.cmWidgetValues.adults; /* Number of Adults */
+                params.t = utils.BE_ATTRIBUTES.cmWidgetValues.occupancy; /* Number of Travelers */
+                params.hp = utils.BE_ATTRIBUTES.cmWidgetValues.total; /* Purchase Price */
+                params.hcu = utils.BE_ATTRIBUTES.cmWidgetValues.currency; /* Purchase Currency */
+                params.hconfno = utils.BE_ATTRIBUTES.cmWidgetValues.code; /* Confirmation Number */    
+                params.ccid = localStorage.sjrn_ccid;
+            }
     
-        var pl = document.createElement('script');
-        pl.type = 'text/javascript';
-        pl.async = true;
-        pl.src = "https://beacon.sojern.com/pixel/cp/27?f_v=cp_v3_js&p_v=1&" + paramsArr.join('&');
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
-    })
+            /* Please do not modify the below code. */ 
+            try {params = Object.assign({}, sjrn_params, params);}catch(e){}
+            var cid = [];
+            var paramsArr = [];
+            var cidParams = [];
+            var pl = document.createElement('iframe');
+            var defaultParams = {"vid":"tou"};
+            for(let key in defaultParams) { params[key] = defaultParams[key]; };
+            for(let key in cidParams) { cid.push(params[cidParams[key]]); };
+            params.cid = cid.join('|');
+            for(let key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
+            pl.type = 'text/html';
+            pl.setAttribute('style','height:0; width: 0; display:none;');
+            pl.async = true;
+			pl.src = "https://static.sojern.com/cip/c/27.html?f_v=cp_v1_js&p_v=1&" + paramsArr.join('&'); 
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);     
+        });
+        
+    });
 }

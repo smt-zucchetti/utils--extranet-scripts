@@ -10,4 +10,5 @@ export * from './_add-per-night-text';
 export * from './_ixtapa-ota-comparison-colors';
 export * from './_sojern-tag';
 export * from './_los-cabos-remove-package-cal-rates';
-export * from './_ixtapa-member-deals-unlock-window-style';
+export * from './_ixtapa-member-deals-unlock-popup-style';
+export * from './_ixtapa-member-deals-unlock-listing-style';
