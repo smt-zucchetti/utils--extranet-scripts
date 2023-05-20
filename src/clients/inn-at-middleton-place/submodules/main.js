@@ -1,2 +1,2 @@
-export * from './_google-ads-conversion-tag-global'
-export * from './_google-ads-conversion-tag-snippet'
+export * from './_google-ads';
+export * from './_update-cancellation-text';

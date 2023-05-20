@@ -12,7 +12,7 @@ export function ixtapaMemberDealsUnlockPopupStyle()
                 {
                     const moduleClass = 'unlocker-pane';
                     
-                    const url = utils.BE_ATTRIBUTES.lang === 'esp' ? 'https://tesororewards.com/es/desbloquear' : 'https://tesororewards.com/es/';
+                    const url = utils.BE_ATTRIBUTES.lang === 'esp' ? 'https://tesororewards.com/es/desbloquear/ixt' : 'https://tesororewards.com/es/';
                     
                     //const unlocker = document.getElementById('unlocker');
                     unlocker.classList.add(moduleClass);

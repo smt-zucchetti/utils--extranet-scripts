@@ -20,7 +20,8 @@ export function addGtmCode()
             4: 'dreamsresorts',
             5: 'zoetryresorts',
             6: 'breathlessresorts',
-            163: 'independent'
+            163: 'independent',
+            178: 'impressionresorts'
         };
         
         const brandNames = 
@@ -32,7 +33,8 @@ export function addGtmCode()
             4: 'Dreams',
             5: 'Zoetry',
             6: 'Breathless',
-            163: 'Independent'
+            163: 'Independent',
+            178: 'Impression'
         };
         
         const resortBrand = resortBrands[brandId],

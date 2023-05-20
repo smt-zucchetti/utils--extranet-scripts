@@ -8,7 +8,8 @@ export const brands = Object.freeze(
     'Breathless': 6,
     'Reflect': 80,
     'Amigo': 97, 
-    'AMResorts Europe': 125
+    'AMResorts Europe': 125,
+    'Impression': 178
 })
 
 export const brandIdToStyleId = Object.freeze(

@@ -4,8 +4,10 @@ export async function getBrandId()
 {
     await utils.populateBeAttributes();
     
-    let brandId = utils.BE_ATTRIBUTES.brandId ? parseInt(utils.BE_ATTRIBUTES.brandId) : parseInt(utils.CURRENT_SCRIPT.getAttribute('brand'));
- 
+    //let brandId = utils.BE_ATTRIBUTES.brandId ? parseInt(utils.BE_ATTRIBUTES.brandId) : parseInt(utils.CURRENT_SCRIPT.getAttribute('brand'));
+    let brandId = utils.BE_ATTRIBUTES.brandId || utils.CURRENT_SCRIPT.getAttribute('brand');
+    brandId = parseInt(brandId);
+    
     //When coming throught from group_index2.html or index.html, brandId is 0, even once a property is selected. This seeks to solve that. 
     //Example URL: https://booking.amrcollection.com/premium/group_index.html?id_gruppo=9437&dc_gruppo=1151&lingua_int=eng&id_stile=18303&adulti1=2&bambini1=0&tot_camere=1&gg=9&mm=11&aa=2022&ggf=12&mmf=11&aaf=2022&notti_1=3 
 
@@ -26,6 +28,13 @@ export async function getBrandId()
             brandId = propCodeToBrandId[propCode];
         }
     }
+
+    //If Secrets Moxche or Secrets Mujeres, we need to use the new brand Impressions, id 178
+    // (To change over on 5/24/23)
+    // if(['24957', '23931'].includes(utils.BE_ATTRIBUTES.propId === '25396'))
+    // {
+    //     brandId = 178;
+    // }
 
     return brandId;
 }
