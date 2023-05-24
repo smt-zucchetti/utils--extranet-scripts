@@ -1,4 +1,4 @@
-import * as data from './../data/client';
+import * as companyData from './_company-data';
 
 export function getBrandNameFromBrandId(brandId)
 {
@@ -7,5 +7,5 @@ export function getBrandNameFromBrandId(brandId)
         return null;
     }
     
-    return Object.keys(data.brands).find(key => data.brands[key] === parseInt(brandId))
+    return Object.keys(companyData.brands).find(key => companyData.brands[key] === parseInt(brandId))
 }

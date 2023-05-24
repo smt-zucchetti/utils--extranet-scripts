@@ -1,5 +1,5 @@
 import * as utils from './../../../lib/utils';
-import * as client from './data/client';
+import * as common from './common_code/main';
 
 
 export function premiumBackgroundImages()
@@ -34,7 +34,7 @@ export function premiumBackgroundImages()
             {
                 if(!brandId)
                 {
-                    for(const [key,val] of Object.entries(client.propIdToBrandId))
+                    for(const [key,val] of Object.entries(common.propIdToBrandId))
                     {
                         if(val.includes(propId))
                         {
@@ -43,7 +43,7 @@ export function premiumBackgroundImages()
                         }
                     }
                 }
-                styleId = client.brandIdToStyleId[brandId];
+                styleId = common.brandIdToStyleId[brandId];
            }
            
             let bgImgUrl = '';

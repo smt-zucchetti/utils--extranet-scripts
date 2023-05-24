@@ -6,3 +6,4 @@ submodules.affiliredScript();
 submodules.hideTotalOnGuestInfo();
 utils.excludingTaxesAndFeesText();
 utils.standardReset();
+//submodules.googleAnalyticsCode();
