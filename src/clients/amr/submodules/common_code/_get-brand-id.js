@@ -30,11 +30,10 @@ export async function getBrandId()
     }
 
     //If Secrets Moxche or Secrets Mujeres, we need to use the new brand Impressions, id 178
-    // (To change over on 5/24/23)
-    // if(['24957', '23931'].includes(utils.BE_ATTRIBUTES.propId === '25396'))
-    // {
-    //     brandId = 178;
-    // }
+    if(['24957', '23931'].includes(utils.BE_ATTRIBUTES.propId))
+    {
+        brandId = 178;
+    }
 
     return brandId;
 }

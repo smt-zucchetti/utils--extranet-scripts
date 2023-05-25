@@ -1,13 +1,12 @@
 import * as utils from './../../../lib/utils';
 
-export function removePromoMessagesFromAMRewardsBEs()
+export async function removePromoMessagesFromAMRewardsBEs()
 {
-    utils.populateBeAttributes().then(() =>
+    await utils.populateBeAttributes();
+    
+    const styleId = utils.BE_ATTRIBUTES.styleId;
+    if(['13474', '13475', '13476', '13477', '13478', '13479'].includes(styleId))
     {
-        const styleId = parseInt(utils.BE_ATTRIBUTES.styleId);
-        if([13474, 13475, 13476, 13477, 13478, 13479].includes(styleId))
-        {
-            import('./styles/remove-promo-messages-from-amrewards-bes.scss');
-        }
-    })
+        import('./styles/remove-promo-messages-from-amrewards-bes.scss');
+    }
 }

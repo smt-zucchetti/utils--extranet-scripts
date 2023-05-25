@@ -1,8 +1,6 @@
 import * as utils from './../../lib/utils';
 import * as submodules from './submodules/main';
 
-
-
 submodules.premiumBackgroundImages();
 submodules.roomUpgradeBoxStyle();
 submodules.tripTease();
@@ -27,11 +25,7 @@ utils.stickyFooter();
 submodules.startingFromPriceAddComma();
 submodules.adobeTmScript();
 submodules.hidePropertyInfo();
-
-import('./submodules/styles/hide-property-info.scss');
-
-submodules.convertExperiments(); //this is the one
-submodules.fixLongUrl();
-
+submodules.convertExperiments();
 submodules.showAddOnDescForInsurance();
 
+submodules.brandTest();

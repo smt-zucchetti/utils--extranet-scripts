@@ -20,6 +20,7 @@ export const brandIdToStyleId = Object.freeze(
     4: 17493, //Dreams id_brand=4 https://extranet.verticalbooking.com/premium_interface_setup.htm?id_albergo=21074
     5: 17495, //Zoetry id_brand=5 https://extranet.verticalbooking.com/premium_interface_setup.htm?id_albergo=10563
     6: 17491, //Breathless id_brand=6 https://extranet.verticalbooking.com/premium_interface_setup.htm?id_albergo=13736
+    178: 20151
 })
 
 export const brandStyleIdArr = 
@@ -30,6 +31,7 @@ export const brandStyleIdArr =
     17493, //Dreams id_brand=4 https://extranet.verticalbooking.com/premium_interface_setup.htm?id_albergo=21074
     17495, //Zoetry id_brand=5 https://extranet.verticalbooking.com/premium_interface_setup.htm?id_albergo=10563
     17491, //Breathless id_brand=6 https://extranet.verticalbooking.com/premium_interface_setup.htm?id_albergo=13736
+    20151 //Impression
 ]
 
 export const brandPropIdArr = 
@@ -107,6 +109,9 @@ export const brandPropIdArr =
     14311, //Sunscape Puerto Plata
     14161, //Sunscape Puerto Vallarta
     11095, //Sunscape Sabor Cozumel
+    //impression
+    24957, //Impression Isla Mujeres
+    23931  //Impression Moxche
 ]
 
 
@@ -197,5 +202,10 @@ export const propIdToBrandId = Object.freeze(
         14311, //Sunscape Puerto Plata
         14161, //Sunscape Puerto Vallarta
         11095, //Sunscape Sabor Cozumel
+    ],
+    //impression
+    178: [
+        24957, //Impression Isla Mujeres
+        23931  //Impression Moxche
     ]
 })

@@ -1,13 +1,11 @@
 import * as utils from './../../../lib/utils';
 
-export function roomUpgradeBoxStyle()
+export async function roomUpgradeBoxStyle()
 {
-    utils.populateBeAttributes().then(() =>
+    await utils.populateBeAttributes();
+    
+    if(utils.BE_ATTRIBUTES.propId === '18179')
     {
-        if(utils.BE_ATTRIBUTES.propId === '18179')
-        {
-            import('./styles/room-upgrade-box-style.scss');             
-        }
-    })
-
+        import('./styles/room-upgrade-box-style.scss');             
+    }
 }

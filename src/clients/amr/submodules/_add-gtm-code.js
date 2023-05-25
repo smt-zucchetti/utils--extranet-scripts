@@ -47,19 +47,19 @@ export function addGtmCode()
             if(utils.BE_ATTRIBUTES.page === 'first_page')
             {
                 dataLayerStr = 
-                `window.dataLayer = window.dataLayer || [];
-                dataLayer = [{
-                    'event': 'selectResort',
-                    'pageFlow': 'Select Resort',
-                    'BookingEngineStep': '/${resortBrand}/choose_resort/vb/step1',
-                    'affiliatedBrand': '${brandName}',
-                    'Vendor': 'Vertical Booking',
-                    'tripType': 'Land Only',
-                    'siteRegion': '${utils.BE_ATTRIBUTES.cmWidgetValues.countryCode}',
-                    'language': '${utils.BE_ATTRIBUTES.cmWidgetValues.language}',
-                    'propertyID': '${utils.BE_ATTRIBUTES.cmWidgetValues.propertyCode}',
-                    'propertyName': '${utils.BE_ATTRIBUTES.cmWidgetValues.propertyName}'
-                }];`   
+                    `window.dataLayer = window.dataLayer || [];
+                    dataLayer = [{
+                        'event': 'selectResort',
+                        'pageFlow': 'Select Resort',
+                        'BookingEngineStep': '/${resortBrand}/choose_resort/vb/step1',
+                        'affiliatedBrand': '${brandName}',
+                        'Vendor': 'Vertical Booking',
+                        'tripType': 'Land Only',
+                        'siteRegion': '${utils.BE_ATTRIBUTES.cmWidgetValues.countryCode}',
+                        'language': '${utils.BE_ATTRIBUTES.cmWidgetValues.language}',
+                        'propertyID': '${utils.BE_ATTRIBUTES.cmWidgetValues.propertyCode}',
+                        'propertyName': '${utils.BE_ATTRIBUTES.cmWidgetValues.propertyName}'
+                    }];`   
             }
             else if(utils.BE_ATTRIBUTES.page === 'results')
             {
