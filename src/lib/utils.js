@@ -1099,6 +1099,24 @@ export function facebookPixelCode(pixelId)
     fbq('track', 'PageView');
 }
 
-
+export async function updateCancellationText()
+{
+    await populateBeAttributes();
+    
+    if(!BE_ATTRIBUTES.page === 'results')
+    {
+        return;
+    }
+        
+    await waitForElement('#box-risultati', false, 10000);
+    
+    const sections = document.querySelectorAll('.section_classicamere');
+    sections.forEach(section =>
+    {
+        const texts = section.querySelectorAll('.pay-cond-short');
+        texts[0].textContent = 'See Rate Information for';
+        texts[1].textContent = 'Payment and Cancel Policy';
+    });
+}
 
 

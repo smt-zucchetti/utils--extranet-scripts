@@ -7,3 +7,8 @@ submodules.hideTotalOnGuestInfo();
 utils.excludingTaxesAndFeesText();
 utils.standardReset();
 //submodules.googleAnalyticsCode();
+
+submodules.gtmCodes();
+submodules.hotelsNetworkScript();
+submodules.ghaAdWords();
+submodules.glopImage();
