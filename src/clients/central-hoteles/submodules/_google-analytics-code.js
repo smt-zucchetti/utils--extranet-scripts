@@ -20,52 +20,53 @@ export async function googleAnalyticsCode()
     var allowedOrigins = [];
     allowedOrigins = [/\.(com|net|it|ru)$/];
     
+    ga('create', 'UA-51817018-1', 'auto', 
+    {
+        'allowLinker': true
+    });
+    ga('require', 'linker');
+    ga('linker:autoLink', allowedOrigins, true, true);
+    ga('require', 'displayfeatures');
+    ga('require', 'linkid', 'linkid.js');
     
-    if(utils.BE_ATTRIBUTES.page === 'first_page')
+    const pageValMap = 
     {
-        
+        'first_page': '/premium/index.html',
+        'results': '/premium/index2.html',
+        'summary': '/premium/index4.html',
+        'thank_you_page': '/premium/thanks_page.html'
+    }
+
+    ga('send', 'pageview', 
+    {
+        'page': pageValMap[utils.BE_ATTRIBUTES.page]
+    });
+
+    await utils.loadScriptAsync('https://www.googletagmanager.com/gtag/js?id=G-J0QBDVD27H');
+    
+    window.dataLayer = window.dataLayer || [];
+    function gtagJ0QBDVD27H(){dataLayer.push(arguments);}
  
-        ga('create', 'UA-51817018-1', 'auto', {
-            'allowLinker': true
-        });
-        ga('require', 'linker');
-        ga('linker:autoLink', allowedOrigins, true, true);
-        ga('require', 'displayfeatures');
-        ga('require', 'linkid', 'linkid.js');
-        ga('send', 'pageview', {
-            'page': '/premium/index.html'
-        });
-        
-        
-        
-        await utils.loadScriptAsync('https://www.googletagmanager.com/gtag/js?id=G-J0QBDVD27H');
-        
-        window.dataLayer = window.dataLayer || [];
-        function gtagJ0QBDVD27H(){dataLayer.push(arguments);}
-     
-        gtagJ0QBDVD27H('js', new Date());
+    gtagJ0QBDVD27H('js', new Date());
 
-        var allowedOrigins = [/\.(com|net|it|ru)$/];
+    var allowedOrigins = [/\.(com|net|it|ru)$/];
 
-        gtagJ0QBDVD27H('config', 'G-J0QBDVD27H', {
-            'allow_google_signals': true,
-            'linker': {
-                'domains': allowedOrigins
-            }
-        });
-      
-        gtagJ0QBDVD27H('config', 'G-J0QBDVD27H', {
-            'send_page_view': false,
-            'page_path': '/premium/index.html'
-        });
-        
-        
-        
-    }
-    else if(utils.BE_ATTRIBUTES.page === 'results')
+    gtagJ0QBDVD27H('config', 'G-J0QBDVD27H', 
     {
-        
-    }
+        'allow_google_signals': true,
+        'linker': 
+        {
+            'domains': allowedOrigins
+        }
+    });
+  
+    gtagJ0QBDVD27H('config', 'G-J0QBDVD27H', 
+    {
+        'send_page_view': false,
+        'page_path': pageValMap[utils.BE_ATTRIBUTES.page]
+    });
+    
+    
     
 
 }
