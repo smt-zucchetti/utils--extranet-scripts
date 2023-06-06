@@ -6,3 +6,5 @@ submodules.hideNotRefundableText();
 submodules.hideRoomsAndChildrenResultsPage();
 submodules.hidePrintButtonThankYouPage();
 utils.disableHilightOnNightsSelect();
+
+submodules.universalAnalytics();

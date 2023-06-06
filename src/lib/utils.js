@@ -1,14 +1,16 @@
-import { equalWebData } from './data/equal-web'
-import load from 'little-loader'
-import getCssData from 'get-css-data'
-import * as cmData from './data/cm-data'
-import * as utilsData from './data/utils-data'
+import { equalWebData } from './data/equal-web';
+import load from 'little-loader';
+import getCssData from 'get-css-data';
+import * as cmData from './data/cm-data';
+import * as utilsData from './data/utils-data';
 
-export const BE_TYPE = utilsData.BE_TYPE,
-BE_ATTRIBUTE_NAMES = utilsData.BE_ATTRIBUTE_NAMES,
-BE_ATTRIBUTES = utilsData.BE_ATTRIBUTES,
-BE_PAGE_NAMES = utilsData.BE_PAGE_NAMES,
-CURRENT_SCRIPT = utilsData.CURRENT_SCRIPT;
+
+
+export const BE_TYPE = utilsData.BE_TYPE;
+export const BE_ATTRIBUTE_NAMES = utilsData.BE_ATTRIBUTE_NAMES;
+export const BE_ATTRIBUTES = utilsData.BE_ATTRIBUTES;
+export const BE_PAGE_NAMES = utilsData.BE_PAGE_NAMES;
+export const CURRENT_SCRIPT = utilsData.CURRENT_SCRIPT;
 
 
 export async function getElementBySelector(selector)
@@ -172,48 +174,39 @@ export function replaceTextInElement(el, txt)
     })
 }
  
-export function hideFacebookButtonOnGuestInfoPage()
+export async function hideFacebookButtonOnGuestInfoPage()
 {
-    populateBeAttributes().then(() => 
+    await populateBeAttributes(); 
+    
+    if(BE_ATTRIBUTES.page === 'guest_info')
     {
-        if(BE_ATTRIBUTES.page === 'guest_info')
-        {
-            import('./styles/hide-facebook-button-on-guest-info-page.scss')   
-        }
-    })
+        import('./styles/hide-facebook-button-on-guest-info-page.scss')   
+    }
 }
 
-export function googleAnalytics4(gaCode)
+export async function universalAnalytics(uaCode)
 {
-    universalAnalytics(gaCode);
-}
-
-export function universalAnalytics(uaCode)
-{
-    loadScriptAsync(`https://www.googletagmanager.com/gtag/js?id=${uaCode}`).then(() =>
-    {
-        populateBeAttributes().then(() => 
-        {
-            window.dataLayer = window.dataLayer || []
-            function gtag(){ dataLayer.push(arguments) }
-            
-            gtag('js', new Date());
-            gtag('config', uaCode);
+    await loadScriptAsync(`https://www.googletagmanager.com/gtag/js?id=${uaCode}`);
+    await populateBeAttributes(); 
         
-            if(BE_ATTRIBUTES.page === 'thank_you_page')
-            {
-                const obj = 
-                {
-                    transaction_id: BE_ATTRIBUTES.cmWidgetValues.code,
-                    value: BE_ATTRIBUTES.cmWidgetValues.total,
-                    tax: BE_ATTRIBUTES.cmWidgetValues.totalTaxes,
-                    currency: BE_ATTRIBUTES.cmWidgetValues.currency
-                };
-                
-                gtag('event', 'purchase', obj);
-            }
-        })
-    })
+    window.dataLayer = window.dataLayer || []
+    function gtag(){ dataLayer.push(arguments) }
+    
+    gtag('js', new Date());
+    gtag('config', uaCode);
+
+    if(BE_ATTRIBUTES.page === 'thank_you_page')
+    {
+        const obj = 
+        {
+            transaction_id: BE_ATTRIBUTES.cmWidgetValues.code,
+            value: BE_ATTRIBUTES.cmWidgetValues.total,
+            tax: BE_ATTRIBUTES.cmWidgetValues.totalTaxes,
+            currency: BE_ATTRIBUTES.cmWidgetValues.currency
+        };
+        
+        gtag('event', 'purchase', obj);
+    }
 }
 
 export function discountCodeNonPassword()
@@ -223,11 +216,6 @@ export function discountCodeNonPassword()
     {
         pwordInput.setAttribute('type', 'text')
     }
-}
-
-export function setPremiumStyles(client)
-{
-    import(`./../clients/${client}/submodules/styles/set-premium-styles.scss`)
 }
 
 export function googleTagManager(gtmCode)
@@ -311,50 +299,6 @@ export async function waitForElement(selector, all = false, maxWaitTime = 2000)
     }
     return false
     //throw new Error('Element doesn\'t exist after max time')
-}
-
-export function matchColorsWithPremiumInterfaceStyles()
-{
-    getCssData(
-    {
-        rootElement: document.head,
-        include: 'link[href*="custom_19026.css"]',
-    
-        onSuccess: (cssText, node, url) =>
-        {
-            if(!url.includes('custom_19026.css'))
-                return
-            
-            const premColors = 
-            {
-                btnStandard: _getFirstMatch('verde', cssText),
-                btnDark: _getFirstMatch('verde2', cssText),
-                btnRollover: _getFirstMatch('verde_rollvover', cssText),
-                lightBg: _getFirstMatch('sfondo_chiaro', cssText),
-                darkBg: _getFirstMatch('sfondo_scuro', cssText),
-                altBtnRollover: _getFirstMatch('rollover', cssText),
-                text: _getFirstMatch('testi', cssText)
-            }
-            document.documentElement.style.setProperty('--btnStandard', premColors.btnStandard)
-            document.documentElement.style.setProperty('--btnDark', premColors.btnDark)
-            document.documentElement.style.setProperty('--btnRollover', premColors.btnRollover)
-            document.documentElement.style.setProperty('--lightBg', premColors.lightBg)
-            document.documentElement.style.setProperty('--darkBg', premColors.darkBg)
-            document.documentElement.style.setProperty('--altBtnRollover', premColors.altBtnRollover)
-            document.documentElement.style.setProperty('--text', premColors.text)
-            
-            import('./styles/match-colors-with-premium-interface-styles.scss');
-        },
-    })
-    
-    function _getFirstMatch(propName, cssText)
-    {
-        const re = new RegExp(`${propName}:\\s*(#[a-zA-Z0-9]*)`)
-        const result = re.exec(cssText)
-        if(result && result[1])
-            return result[1]
-        return null
-    }
 }
 
 export function loadWihpTrackingScript(wihpId)
