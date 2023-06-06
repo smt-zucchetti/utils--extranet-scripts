@@ -53,16 +53,7 @@ export function addStylesToStylesheet(styles)
 
 export function hideSocialMediaButtonsOnSummaryPage()
 {
-    const styles = `
-        #dx .campi_dati #social{
-            display: none
-        }
-        
-        #dx .campi_dati #dati_personali{
-            padding-top:20px;
-        }
-    `
-    addStylesToStylesheet(styles)
+    import('./styles/hide-social-media-buttons-on-summary-page.scss');
 }
 
 export function adaWidget(beType)
@@ -173,11 +164,11 @@ export function discountButtonColor(bgColor, txtColor)
     import('./styles/discount-button-color.scss')
 }
 
-export function replaceTextInElement(element, Text)
+export function replaceTextInElement(el, txt)
 {
-    getElementBySelector(element).then(() =>
+    getElementBySelector(el).then(() =>
     {
-        document.querySelector(element).innerHTML = Text 
+        document.querySelector(el).innerHTML = txt 
     })
 }
  

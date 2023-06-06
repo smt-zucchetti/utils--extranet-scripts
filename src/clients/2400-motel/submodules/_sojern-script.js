@@ -10,7 +10,7 @@ export async function sojernScript()
         return;
     }
     
-    const params = {};
+    var params = {};
             
     if(utils.BE_ATTRIBUTES.page === 'results')
     {
@@ -52,10 +52,10 @@ export async function sojernScript()
     var cidParams = [];
     var pl = document.createElement('iframe');
     var defaultParams = {"vid":"tou"};
-    for(let key in defaultParams) { params[key] = defaultParams[key]; };
-    for(let key in cidParams) { cid.push(params[cidParams[key]]); };
+    for(let key in defaultParams) { params[key] = defaultParams[key]; }
+    for(let key in cidParams) { cid.push(params[cidParams[key]]); }
     params.cid = cid.join('|');
-    for(let key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
+    for(let key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) }
     pl.type = 'text/html';
     pl.setAttribute('style','height:0; width: 0; display:none;');
     pl.async = true;

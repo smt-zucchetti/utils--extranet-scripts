@@ -1,0 +1,14 @@
+#legenda_calendario .voce_legenda:last-of-type
+{
+    color: transparent;
+    position: relative;
+
+    &::after
+    {
+        content: "Not Available For Arrivals";
+        color: #444;
+        position: absolute;
+        left: 20px;
+        top: -2px;
+    }
+}

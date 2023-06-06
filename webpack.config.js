@@ -1,5 +1,6 @@
 const path = require('path')
 const glob = require('glob')
+const webpack = require('webpack');
 
 const fileArr = glob.sync('./src/clients/*/{{pages/*.js,service-providers/*[0-9].js,script.js,first.js,last.js,service-provider.js},all-pages.js}', {}).reduce((acc,cur) =>
 {
@@ -11,14 +12,27 @@ const fileArr = glob.sync('./src/clients/*/{{pages/*.js,service-providers/*[0-9]
 module.exports = 
 {
     entry: fileArr,
-    output: {
+    
+    output: 
+    {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
         library: 'cms',
         clean: true
     },
-    module: {
-        rules: [
+    
+    plugins:
+    [
+        new webpack.ProvidePlugin( 
+        {
+            utilsAuto: path.resolve(path.join(__dirname, 'src/lib/utils'))
+        })
+    ],
+    
+    module: 
+    {
+        rules: 
+        [
             {
                 test: /\.scss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
@@ -34,5 +48,6 @@ module.exports =
             }
         ]
     },
+    
     mode: 'development'
 }
