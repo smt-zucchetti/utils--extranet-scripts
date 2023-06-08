@@ -1,0 +1,37 @@
+{
+  "name": "ff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "webpack-glob-loader": "^1.0.0"
+  },
+  "dependencies": {
+    "css-loader": "^5.2.7",
+    "get-css-data": "^2.1.0",
+    "glob": "^7.2.3",
+    "little-loader": "^0.2.0",
+    "node-sass": "^6.0.1",
+    "path": "^0.12.7",
+    "sass": "^1.62.0",
+    "sass-loader": "^11.1.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.79.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
