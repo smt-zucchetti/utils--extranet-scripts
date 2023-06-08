@@ -38,7 +38,7 @@ eval("/**\n * Script loading is difficult thanks to IE. We need callbacks to fir
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _submodules_main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./submodules/main */ \"./src/clients/steve-demo/submodules/main.js\");\n/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../lib/utils */ \"./src/lib/utils.js\");\n\n\n\n//submodules.changeCreditCardIFrame();\n_submodules_main__WEBPACK_IMPORTED_MODULE_0__.testing();\n_submodules_main__WEBPACK_IMPORTED_MODULE_0__.hideCalPricesWhenDiscountCode();\n\n//# sourceURL=webpack://cms/./src/clients/steve-demo/script.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _submodules_main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./submodules/main */ \"./src/clients/steve-demo/submodules/main.js\");\n/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../lib/utils */ \"./src/lib/utils.js\");\n\n\n\n//submodules.changeCreditCardIFrame();\n_submodules_main__WEBPACK_IMPORTED_MODULE_0__.testing();\n_submodules_main__WEBPACK_IMPORTED_MODULE_0__.hideCalPricesWhenDiscountCode();\nconsole.log('steve demo');\n\n//# sourceURL=webpack://cms/./src/clients/steve-demo/script.js?");
 
 /***/ }),
 

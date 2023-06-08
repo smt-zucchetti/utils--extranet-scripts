@@ -4,3 +4,4 @@ import * as utils from './../../lib/utils';
 //submodules.changeCreditCardIFrame();
 submodules.testing();
 submodules.hideCalPricesWhenDiscountCode();
+console.log('steve demo');
