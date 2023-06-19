@@ -65,7 +65,11 @@ const tripTeaseData =
 export async function tripTease()
 {
     await utils.populateBeAttributes(); 
-    
+ 
+    //await utils.populateBeAttributes();
+    console.log('utils.BE_ATTRIBUTES.page', utils.BE_ATTRIBUTES.page);
+
+
     const propId = utils.BE_ATTRIBUTES.propId;
 
     if(!Object.keys(tripTeaseData).includes(propId))

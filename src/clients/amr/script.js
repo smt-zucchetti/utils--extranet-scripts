@@ -30,4 +30,3 @@ submodules.showAddOnDescForInsurance();
 
 //submodules.brandTest();
 
-console.log('logging on be subdomain');

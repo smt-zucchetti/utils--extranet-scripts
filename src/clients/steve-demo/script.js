@@ -5,3 +5,4 @@ import * as utils from './../../lib/utils';
 submodules.testing();
 submodules.hideCalPricesWhenDiscountCode();
 console.log('steve demo');
+console.log('steve demo on new setup');
