@@ -1,0 +1,1 @@
+export * from './_add-script-to-thank-you-page';

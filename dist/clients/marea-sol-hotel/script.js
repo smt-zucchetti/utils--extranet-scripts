@@ -38,7 +38,29 @@ eval("/**\n * Script loading is difficult thanks to IE. We need callbacks to fir
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../lib/utils */ \"./src/lib/utils.js\");\n \n\n_lib_utils__WEBPACK_IMPORTED_MODULE_0__.universalAnalytics('UA-249243037-1');\n\n\n//# sourceURL=webpack://cms/./src/clients/marea-sol-hotel/script.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../lib/utils */ \"./src/lib/utils.js\");\n/* harmony import */ var _submodules_main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./submodules/main */ \"./src/clients/marea-sol-hotel/submodules/main.js\");\n \n\n\n_lib_utils__WEBPACK_IMPORTED_MODULE_0__.universalAnalytics('UA-249243037-1');\n_submodules_main__WEBPACK_IMPORTED_MODULE_1__.addScriptToThankYouPage();\n\n//# sourceURL=webpack://cms/./src/clients/marea-sol-hotel/script.js?");
+
+/***/ }),
+
+/***/ "./src/clients/marea-sol-hotel/submodules/_add-script-to-thank-you-page.js":
+/*!*********************************************************************************!*\
+  !*** ./src/clients/marea-sol-hotel/submodules/_add-script-to-thank-you-page.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addScriptToThankYouPage\": () => (/* binding */ addScriptToThankYouPage)\n/* harmony export */ });\n/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../lib/utils */ \"./src/lib/utils.js\");\n\n\nasync function addScriptToThankYouPage()\n{\n    await _lib_utils__WEBPACK_IMPORTED_MODULE_0__.populateBeAttributes();\n    \n    if(_lib_utils__WEBPACK_IMPORTED_MODULE_0__.BE_ATTRIBUTES.page === 'thank_you_page')\n    {\n        \n        function zync_call() {\n            var z = document.createElement(\"script\");\n            var custom1=\"{number_of_guests}\";\n            var custom2=\"{Dates}\";\n            var custom3=\"{room_type}\";\n            var custom4=\"{services}\";\n            var zmpID=\"marea-sol-hotel\";\n            var cache_buster=Date.now();\n    \n            var z_src = \"https://live.rezync.com/sync?c=16b6410431b6374e780104abb0443ca8&p=99a7724385593e785cd7f3816c5cdf4e&k=marea-sol-hotel-pixel-8008&custom1=\"+custom1+\"&custom2=\"+custom2+\"&custom3=\"+custom3+\"&custom4=\"+custom4+\"&zmpID=\"+zmpID+\"&cache_buster=\"+cache_buster;\n            z.setAttribute(\"src\", z_src);\n            document.body.appendChild(z);\n        }\n    \n        if (['complete', 'interactive'].indexOf(document.readyState) >= 0) {\n            zync_call();\n        } else {\n            window.addEventListener(\"DOMContentLoaded\", function(){\n                zync_call();\n            });\n        }\n    }\n}\n\n//# sourceURL=webpack://cms/./src/clients/marea-sol-hotel/submodules/_add-script-to-thank-you-page.js?");
+
+/***/ }),
+
+/***/ "./src/clients/marea-sol-hotel/submodules/main.js":
+/*!********************************************************!*\
+  !*** ./src/clients/marea-sol-hotel/submodules/main.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addScriptToThankYouPage\": () => (/* reexport safe */ _add_script_to_thank_you_page__WEBPACK_IMPORTED_MODULE_0__.addScriptToThankYouPage)\n/* harmony export */ });\n/* harmony import */ var _add_script_to_thank_you_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_add-script-to-thank-you-page */ \"./src/clients/marea-sol-hotel/submodules/_add-script-to-thank-you-page.js\");\n\n\n//# sourceURL=webpack://cms/./src/clients/marea-sol-hotel/submodules/main.js?");
 
 /***/ }),
 

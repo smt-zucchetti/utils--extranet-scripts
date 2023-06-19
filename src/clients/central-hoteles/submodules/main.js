@@ -6,3 +6,4 @@ export * from './_gtm-codes';
 export * from './_hotels-network-script';
 export * from './_gha-ad-words';
 export * from './_glop-image';
+export * from './_new-gtm-code';
