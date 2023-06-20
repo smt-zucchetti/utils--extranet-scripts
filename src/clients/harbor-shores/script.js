@@ -5,6 +5,4 @@ submodules.variousTextualChanges();
 submodules.hideLocationPropertyInfo(); 
 utils.disableHilightOnNightsSelect();
 submodules.sojernCode();
-//utils.gtm4StandardCode('GTM-5GQ2D35');
 utils.googleTagManager('GTM-5GQ2D35');
-console.log('test');
