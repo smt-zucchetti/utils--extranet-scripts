@@ -1,3 +1,5 @@
-import * as submodules from './submodules/main'
+import * as submodules from './submodules/main';
+import * as utils from './../../lib/utils';
 
-submodules.limitMobileRoomCounter()
+submodules.limitMobileRoomCounter();
+utils.fixSelectButtonGlitch();

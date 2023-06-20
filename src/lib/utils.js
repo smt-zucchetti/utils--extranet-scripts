@@ -1054,4 +1054,13 @@ export async function updateCancellationText()
     });
 }
 
+export function fixSelectButtonGlitch()
+{
+    import('./styles/fix-select-button-glitch.scss');
+
+}
+
+
+
+
 
