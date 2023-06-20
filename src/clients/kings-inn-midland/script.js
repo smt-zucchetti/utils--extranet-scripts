@@ -3,3 +3,5 @@ import * as utils from './../../lib/utils';
 
 submodules.limitMobileRoomCounter();
 utils.fixSelectButtonGlitch();
+
+//be.vb domain updated
