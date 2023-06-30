@@ -13,4 +13,4 @@ submodules.hotelsNetworkScript();
 submodules.ghaAdWords();
 submodules.glopImage();
 
-submodules.newGtmCode();
+//submodules.newGtmCode();

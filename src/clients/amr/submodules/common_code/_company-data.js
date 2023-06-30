@@ -208,4 +208,14 @@ export const propIdToBrandId = Object.freeze(
         24957, //Impression Isla Mujeres
         23931  //Impression Moxche
     ]
-})
+});
+
+export const brandIdToSPStyleID = Object.freeze(
+{
+    //Breathless
+    6: 16645,
+    //Secrets
+    3: 13477,
+    //Dreams
+    4: 17493
+});
