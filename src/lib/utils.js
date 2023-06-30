@@ -912,7 +912,7 @@ export function gtm4StandardCode(gtmCode)
             }
         }
         
-        console.log('eventObj z', eventObj);
+        console.log('eventObj zrz', eventObj);
 
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push(eventObj);
