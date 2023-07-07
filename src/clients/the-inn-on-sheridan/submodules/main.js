@@ -1,0 +1,1 @@
+export * from './_gtm-with-thank-you-code';
