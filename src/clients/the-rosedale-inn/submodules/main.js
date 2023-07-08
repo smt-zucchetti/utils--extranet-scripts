@@ -1,1 +1,1 @@
-import * from './_policy-cookie';
+export * from './_policy-cookie';
