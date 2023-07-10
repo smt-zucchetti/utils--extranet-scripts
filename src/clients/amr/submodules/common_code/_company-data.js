@@ -213,9 +213,15 @@ export const propIdToBrandId = Object.freeze(
 export const brandIdToSPStyleID = Object.freeze(
 {
     //Breathless
-    6: 16645,
-    //Secrets
-    3: 13477,
+    6: 16645, //=> 20266,
     //Dreams
-    4: 17493
+    4: 17493,
+    //Impressions
+    178: 16610,//=> 20267
+    //Now
+    2: 16668,
+    //Secrets
+    3: 13477, //=> 20265,
+    //Sunscape
+    1: 16763,//
 });
