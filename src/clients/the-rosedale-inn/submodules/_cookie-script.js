@@ -1,6 +1,6 @@
-import * as utils from './../../../lib/utils';
+import * as utils from './../../lib/utils';
 
-export async function policyCookie()
+export async function cookieScript()
 {
 	await utils.populateBeAttributes();
 
