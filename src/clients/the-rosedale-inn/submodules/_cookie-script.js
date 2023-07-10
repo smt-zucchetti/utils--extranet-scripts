@@ -1,4 +1,4 @@
-import * as utils from './../../lib/utils';
+import * as utils from './../../../lib/utils';
 
 export async function cookieScript()
 {
