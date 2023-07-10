@@ -10,7 +10,5 @@ export async function changeFooterHref()
     {
         homeEl.setAttribute('href', 'https://www.joondalupresort.com.au');        
     }      
-
-    console.log('change footer');
 }
 
