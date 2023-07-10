@@ -38,7 +38,8 @@ export async function sojernCode()
 		var pl = document.createElement('iframe');
 		pl.type = 'text/html';
 		pl.setAttribute('style','height:0; width: 0; display:none;');
-		pl.async = true;
+		//pl.async = true;
+		pl.setAttribute('async', 'true');
 		pl.src = "https://static.sojern.com/cip/c/27.html?f_v=cp_v3_js&p_v=1&" + paramsArr.join('&');
 		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
   	})();
