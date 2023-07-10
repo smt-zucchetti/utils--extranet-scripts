@@ -3,4 +3,4 @@ import * as submodules from './submodules/main';
 
 
 utils.googleTagManager('GTM-M6XZFZ7');
-submodules.wihpCode();
+//submodules.wihpCode();
