@@ -7,12 +7,11 @@ export async function cookieScript()
 	const script = document.createElement('script');
 
 	script.id = "__policy_cookie";
-	script.classList.add('asdasdasdads');
 	script.setAttribute('hotel_lang', utils.BE_ATTRIBUTES.cmWidgetValues.language);
 	script.setAttribute('hotel_id', utils.BE_ATTRIBUTES.cmWidgetValues.propertyId);
 	script.setAttribute('src', '/js/policy/cookie.js');
 
 
 	document.head.appendChild(script);
-	// <script id="__policy_cookie" hotel_lang="@@LANGUAGE@@" hotel_id="@@PROPERTY_ID@@" src="/js/policy/cookie.js"></script>
+
 }
