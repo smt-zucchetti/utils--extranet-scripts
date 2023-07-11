@@ -93,7 +93,7 @@ export async function wihpCode()
                 	'start_date': utils.BE_ATTRIBUTES.cmWidgetValues.startDateNumbers,
 					'end_date': utils.BE_ATTRIBUTES.cmWidgetValues.endDateNumbers	
                 };
-            }); 
+            }) 
 		});
 
 	}
