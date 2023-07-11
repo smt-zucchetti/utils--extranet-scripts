@@ -23,7 +23,7 @@ export async function wihpCode()
 
 
 		//Google Global Site Tag
-		await loadScriptAsync(`https://www.googletagmanager.com/gtag/js?id=AW-${convId}`);
+		await utils.loadScriptAsync(`https://www.googletagmanager.com/gtag/js?id=AW-${convId}`);
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments)};
 		gtag('js', new Date());
@@ -57,7 +57,7 @@ export async function wihpCode()
 		//Google Conversion Tag
 		
 		//  GHA Global Site Tag (gtag.js) - GHA/Adwords
-		await loadScriptAsync(`https://www.googletagmanager.com/gtag/js?id=AW-${convId}`);
+		await utils.loadScriptAsync(`https://www.googletagmanager.com/gtag/js?id=AW-${convId}`);
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments)};
 		gtag('js', new Date());
