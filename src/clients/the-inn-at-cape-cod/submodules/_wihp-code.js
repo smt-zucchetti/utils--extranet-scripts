@@ -8,20 +8,19 @@ export async function wihpCode()
 	const convId = '700261042';
 	const convLabel = 'XCMbCLX-xbMBELLF9M0C';
 
+	//WIHP Global Site Tag
+	(function() {
+		var wh = document.createElement('script'); 
+		wh.type = 'text/javascript'; 
+		wh.async = true;
+		wh.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'p.relay-t.io/wh.js';
+		var s = document.getElementsByTagName('script')[0]; 
+		s.parentNode.insertBefore(wh, s);
+	})();
+
 	await utils.populateBeAttributes();
 	if(utils.BE_ATTRIBUTES.page !== 'thank_you_page')
 	{
-		//WIHP Global Site Tag
-		(function() {
-			var wh = document.createElement('script'); 
-			wh.type = 'text/javascript'; 
-			wh.async = true;
-			wh.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'p.relay-t.io/wh.js';
-			var s = document.getElementsByTagName('script')[0]; 
-			s.parentNode.insertBefore(wh, s);
-		})();
-
-
 		//Google Global Site Tag
 		await utils.loadScriptAsync(`https://www.googletagmanager.com/gtag/js?id=AW-${convId}`);
 		window.dataLayer = window.dataLayer || [];
