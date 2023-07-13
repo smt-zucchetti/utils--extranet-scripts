@@ -10,7 +10,7 @@ submodules.usFirstInDropdown();
 submodules.askPixel();
 submodules.ghaAdWords();
 submodules.bingHotelAds();
-submodules.wihpTrackingScript();
+utils.legacyWihpConversionOnly('186559');
 utils.googleTagManager('GTM-KS7LFJ');
 utils.disableHilightOnNightsSelect();
 utils.excludingTaxesAndFeesText();

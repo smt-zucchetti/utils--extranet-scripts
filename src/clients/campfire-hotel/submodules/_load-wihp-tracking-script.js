@@ -1,12 +1,11 @@
 import * as utils from './../../../lib/utils';
 
-export function loadWihpTrackingScript()
+export async function loadWihpTrackingScript()
 {
-    utils.populateBeAttributes().then(() =>
+    await utils.populateBeAttributes();
+    
+    if(utils.BE_ATTRIBUTES.page === 'thank_you_page')
     {
-        if(utils.BE_ATTRIBUTES.page === 'thank_you_page')
-        {
-            utils.loadWihpTrackingScript('206304');
-        }
-    });
+        utils.legacyWihpConversionOnly('206304');
+    }
 } 

@@ -1,6 +1,4 @@
 import * as utils from './../../lib/utils';
-import * as submodules from './submodules/main';
-
 
 utils.googleTagManager('GTM-M6XZFZ7');
-submodules.wihpCode();
+utils.wihpCodeNew('210372','700261042','XCMbCLX-xbMBELLF9M0C');

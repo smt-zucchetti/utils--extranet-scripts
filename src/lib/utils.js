@@ -301,32 +301,7 @@ export async function waitForElement(selector, all = false, maxWaitTime = 2000)
     //throw new Error('Element doesn\'t exist after max time')
 }
 
-export function loadWihpTrackingScript(wihpId)
-{
-    populateBeAttributes().then(() => 
-    {
-        if(BE_ATTRIBUTES.page === 'thank_you_page')
-        {
-            const url = `https://secure-hotel-tracker.com/tics/log.php?act=conversion&idbe=3&date_format=YYYY-MM-DD&idwihp=${wihpId}`;
-        
-            const obj = {
-                ref: BE_ATTRIBUTES.cmWidgetValues.code,
-                amount: BE_ATTRIBUTES.cmWidgetValues.totalNoTaxes,
-                currency: BE_ATTRIBUTES.cmWidgetValues.currency,
-                checkin: BE_ATTRIBUTES.cmWidgetValues.startDateNumbers,
-                checkout: BE_ATTRIBUTES.cmWidgetValues.endDateNumbers
-            };
-            
-            let finalUrl = url;
-            for (const [key, value] of Object.entries(obj)) 
-            {
-                finalUrl += `&${key}=${value}`;
-            }
-            
-            loadScript(finalUrl);
-        }
-    });
-}
+
 
 export function loadVideoAsBackground(url)
 {
@@ -1062,7 +1037,114 @@ export function fixSelectButtonGlitch()
 
 }
 
+export async function wihpCodeNew(idWihp, convIdAW, convLabelAW)
+{
+    //WIHP Global Site Tag
+    (function() {
+        var wh = document.createElement('script'); wh.type = 'text/javascript'; wh.async = true;
+        wh.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'p.relay-t.io/wh.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wh, s);
+    })();
 
+    //GHA Global Site Tag (gtag.js) - GHA/Adwords
+    await loadScriptAsync(`https://www.googletagmanager.com/gtag/js?id=AW-${convIdAW}`);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)};
+    gtag('js', new Date());
+    gtag('config', `AW-${convIdAW}`);
+    gtag('config', 'HA-75', { 'conversion_cookie_prefix' : '_ha'});
+
+    //Bing Global Site Tag - Bing Hotel Ads
+    (function(w,d,t,r,u){
+        var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"13006875"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)
+    })(window,document,"script","//bat.bing.com/bat.js","uetq");
+
+    await populateBeAttributes();
+    if(BE_ATTRIBUTES.page === 'thank_you_page')
+    {
+        //GHA Global Site Tag (gtag.js) - GHA/Adwords 
+        loadScriptAsync(`https://www.googletagmanager.com/gtag/js?id=AW-${convIdAW}`);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments)};
+        gtag('js', new Date());
+        gtag('config', `AW-${convIdAW}`);
+        gtag('config', 'HA-75', { 'conversion_cookie_prefix' : '_ha'});
+
+        //WIHP Global Site Tag (gtag.js) - GHA/Adwords
+        (function() {
+            var wh = document.createElement('script'); 
+            wh.type = 'text/javascript'; wh.async = true;
+            wh.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'p.relay-t.io/wh.js';
+            var s = document.getElementsByTagName('script')[0]; 
+            s.parentNode.insertBefore(wh, s);
+        })();
+        
+        //Event snippet for Conversion - GHA conversion page
+        let numRooms = parseInt(BE_ATTRIBUTES.cmWidgetValues.startDateNumbers.rooms);
+        numRooms = numRooms ? numRooms : 1; 
+        gtag('event', 'purchase', 
+        {
+            'send_to': [
+                `AW-${convIdAW}/${convLabelAW}`,
+                'HA-75'
+            ],
+            'transaction_id': BE_ATTRIBUTES.cmWidgetValues.code,
+            'value': BE_ATTRIBUTES.cmWidgetValues.totalNoTaxes,
+            'currency': BE_ATTRIBUTES.cmWidgetValues.currency,
+            'items': [...Array(numRooms).keys()].map(() =>
+            {
+                return 
+                {
+                    'id': idWihp,
+                    'start_date': BE_ATTRIBUTES.cmWidgetValues.startDateNumbers,
+                    'end_date': BE_ATTRIBUTES.cmWidgetValues.endDateNumbers
+                };
+            });
+
+        });
+
+        //Bing Conversion Tag - Bing Hotel Ads
+        window.uetq.push('event', 'my_hotel_event_action', 
+        {
+            'hct_total_price': BE_ATTRIBUTES.cmWidgetValues.total,
+            'hct_base_price': BE_ATTRIBUTES.cmWidgetValues.totalNoTaxes,
+            'currency': BE_ATTRIBUTES.cmWidgetValues.currency,
+            'hct_checkin_date': BE_ATTRIBUTES.cmWidgetValues.startDateNumbers,
+            'hct_checkout_date': BE_ATTRIBUTES.cmWidgetValues.endDateNumbers,
+            'hct_length_of_stay': BE_ATTRIBUTES.cmWidgetValues.nights,
+            'hct_partner_hotel_id': idWihp,
+            'hct_booking_xref': BE_ATTRIBUTES.cmWidgetValues.code
+        });
+    }
+}
+
+//export function loadWihpTrackingScript(wihpId)
+export async function legacyWihpConversionOnly(wihpId)
+{
+    await populateBeAttributes(); 
+    
+    if(BE_ATTRIBUTES.page === 'thank_you_page')
+    {
+        const url = `https://secure-hotel-tracker.com/tics/log.php?act=conversion&idbe=3&date_format=YYYY-MM-DD&idwihp=${wihpId}`;
+    
+        const obj = {
+            ref: BE_ATTRIBUTES.cmWidgetValues.code,
+            amount: BE_ATTRIBUTES.cmWidgetValues.totalNoTaxes,
+            currency: BE_ATTRIBUTES.cmWidgetValues.currency,
+            checkin: BE_ATTRIBUTES.cmWidgetValues.startDateNumbers,
+            checkout: BE_ATTRIBUTES.cmWidgetValues.endDateNumbers
+        };
+        
+        let finalUrl = url;
+        for (const [key, value] of Object.entries(obj)) 
+        {
+            finalUrl += `&${key}=${value}`;
+        }
+        
+        loadScript(finalUrl);
+    }
+}
 
 
 

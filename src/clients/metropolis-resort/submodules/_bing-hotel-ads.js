@@ -32,14 +32,14 @@ export function bingHotelAds()
         {
             window.uetq.push('event', 'my_hotel_event_action', 
             {
-                hct_total_price: utils.BE_ATTRIBUTES.cmValues.cmTotalTaxes,
-                hct_base_price:  utils.BE_ATTRIBUTES.cmValues.cmTotalNoTaxes,
-                currency:  utils.BE_ATTRIBUTES.cmValues.cmCurrency,
-                hct_checkin_date: utils.BE_ATTRIBUTES.cmValues.cmStartDateNumbers,
-                hct_checkout_date: utils.BE_ATTRIBUTES.cmValues.cmEndDateNumbers,
-                hct_length_of_stay: utils.BE_ATTRIBUTES.cmValues.cmNights,
+                hct_total_price: utils.BE_ATTRIBUTES.cmWidgetValues.totalTaxes,
+                hct_base_price:  utils.BE_ATTRIBUTES.cmWidgetValues.totalNoTaxes,
+                currency:  utils.BE_ATTRIBUTES.cmWidgetValues.currency,
+                hct_checkin_date: utils.BE_ATTRIBUTES.cmWidgetValues.startDateNumbers,
+                hct_checkout_date: utils.BE_ATTRIBUTES.cmWidgetValues.endDateNumbers,
+                hct_length_of_stay: utils.BE_ATTRIBUTES.cmWidgetValues.nights,
                 hct_partner_hotel_id: '186559',
-                hct_booking_xref: utils.BE_ATTRIBUTES.cmValues.cmCode
+                hct_booking_xref: utils.BE_ATTRIBUTES.cmWidgetValues.code
             })
         }
     })
