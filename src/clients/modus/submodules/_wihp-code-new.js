@@ -1,6 +1,6 @@
 import * as utils from './../../../lib/utils';
 
-export async function wihpCode()
+export async function wihpCodeNew()
 {
     await utils.populateBeAttributes(); 
     

@@ -1094,14 +1094,13 @@ export async function wihpCodeNew(idWihp, convIdAW, convLabelAW)
             'currency': BE_ATTRIBUTES.cmWidgetValues.currency,
             'items': [...Array(numRooms).keys()].map(() =>
             {
-                return 
+                return(
                 {
                     'id': idWihp,
-                    'start_date': BE_ATTRIBUTES.cmWidgetValues.startDateNumbers,
-                    'end_date': BE_ATTRIBUTES.cmWidgetValues.endDateNumbers
-                };
-            });
-
+                    'start_date' : BE_ATTRIBUTES.cmWidgetValues.startDateNumbers,
+                    'end_date' : BE_ATTRIBUTES.cmWidgetValues.endDateNumbers
+                });
+            })
         });
 
         //Bing Conversion Tag - Bing Hotel Ads

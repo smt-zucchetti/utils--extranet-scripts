@@ -1,6 +1,6 @@
 import * as utils from './../../../lib/utils'
 
-export function ghaAdWords()
+export async function ghaAdWords()
 {
     await utils.populateBeAttributes();
     
